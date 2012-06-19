@@ -99,7 +99,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Long
+name|Object
 name|save
 parameter_list|(
 specifier|final

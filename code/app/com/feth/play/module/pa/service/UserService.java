@@ -72,7 +72,7 @@ parameter_list|)
 function_decl|;
 comment|/** 	 * Saves auth provider/id combination to a local user 	 * @param authUser 	 * @return 	 */
 specifier|public
-name|Long
+name|Object
 name|save
 parameter_list|(
 specifier|final
