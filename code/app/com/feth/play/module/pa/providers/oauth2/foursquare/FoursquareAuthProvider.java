@@ -177,7 +177,7 @@ specifier|final
 name|String
 name|PROVIDER_KEY
 init|=
-literal|"4square"
+literal|"foursquare"
 decl_stmt|;
 specifier|private
 specifier|static
