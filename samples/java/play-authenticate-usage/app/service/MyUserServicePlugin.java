@@ -135,10 +135,13 @@ operator|.
 name|id
 return|;
 block|}
+else|else
+block|{
 comment|// we have this user already, so return null
 return|return
 literal|null
 return|;
+block|}
 block|}
 annotation|@
 name|Override
