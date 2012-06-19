@@ -729,6 +729,28 @@ name|getLastName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|getEmail
+argument_list|()
+operator|+
+literal|") @ "
+operator|+
+name|getProvider
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
