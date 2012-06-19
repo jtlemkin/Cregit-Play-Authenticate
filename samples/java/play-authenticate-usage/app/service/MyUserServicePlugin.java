@@ -154,6 +154,9 @@ name|AuthUserIdentity
 name|identity
 parameter_list|)
 block|{
+comment|// For production: Caching might be a good idea here...
+comment|// ...and dont forget to sync the cache when users get deactivated/deleted
+specifier|final
 name|User
 name|u
 init|=

@@ -66,7 +66,7 @@ name|AuthUser
 name|authUser
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns the local identifying object if the auth provider/id combination has been linked to a local user account already 	 * or null if not 	 *  	 * @param identity 	 * @return 	 */
+comment|/** 	 * Returns the local identifying object if the auth provider/id combination has been linked to a local user account already 	 * or null if not. 	 * This gets called on any login to check whether the session user still has a valid corresponding local user 	 *  	 * @param identity 	 * @return 	 */
 specifier|public
 name|Object
 name|getLocalIdentity
