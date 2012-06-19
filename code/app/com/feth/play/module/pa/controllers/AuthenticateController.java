@@ -188,7 +188,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// Provider wasn't found and/or user was fooling with our stuff
+comment|// Provider wasn't found and/or user was fooling with our stuff - tell him off:
 return|return
 name|notFound
 argument_list|()
@@ -243,6 +243,7 @@ operator|)
 name|o
 decl_stmt|;
 comment|// We might want to do merging here:
+comment|// Adapted from:
 comment|// http://stackoverflow.com/questions/6666267/architecture-for-merging-multiple-user-accounts-together
 comment|// 1. The account is linked to a local account and no session
 comment|// cookie is present --> Login
@@ -286,20 +287,6 @@ name|loginIdentity
 operator|!=
 literal|null
 decl_stmt|;
-comment|// get the user with which we are logged in - is null if we are
-comment|// not logged in
-specifier|final
-name|AuthUser
-name|oldUser
-init|=
-name|PlayAuthenticate
-operator|.
-name|getUser
-argument_list|(
-name|ctx
-argument_list|()
-argument_list|)
-decl_stmt|;
 specifier|final
 name|AuthUser
 name|loginUser
@@ -327,6 +314,21 @@ name|isLoggedIn
 condition|)
 block|{
 comment|// 2. -> Merge
+comment|// get the user with which we are logged in - is null if we
+comment|// are
+comment|// not logged in
+specifier|final
+name|AuthUser
+name|oldUser
+init|=
+name|PlayAuthenticate
+operator|.
+name|getUser
+argument_list|(
+name|ctx
+argument_list|()
+argument_list|)
+decl_stmt|;
 comment|// merge the two identities and return the AuthUser we want
 comment|// to use for the log in
 if|if
@@ -365,6 +367,7 @@ name|isAccountAutoMerge
 argument_list|()
 condition|)
 block|{
+comment|// Account auto merging is enabled
 name|loginUser
 operator|=
 name|PlayAuthenticate
@@ -382,6 +385,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// Account auto merging is disabled - forward user
+comment|// to merge request page
 specifier|final
 name|Call
 name|c
@@ -472,6 +477,22 @@ name|isAccountAutoLink
 argument_list|()
 condition|)
 block|{
+comment|// Account auto linking is enabled
+comment|// get the user with which we are logged in - is null if
+comment|// we are
+comment|// not logged in
+specifier|final
+name|AuthUser
+name|oldUser
+init|=
+name|PlayAuthenticate
+operator|.
+name|getUser
+argument_list|(
+name|ctx
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|loginUser
 operator|=
 name|PlayAuthenticate
@@ -489,6 +510,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// Account auto linking is disabled - forward user to
+comment|// link suggestion page
 specifier|final
 name|Call
 name|c

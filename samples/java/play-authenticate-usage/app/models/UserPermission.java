@@ -1,39 +1,9 @@
 begin_unit|revision:0.9.5;language:Java;cregit-version:0.0.1
-begin_comment
-comment|/*  * Copyright 2012 Steve Chaloner  *  * Licensed under the Apache License, Version 2.0 (the "License");  * you may not use this file except in compliance with the License.  * You may obtain a copy of the License at  *  *     http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  * See the License for the specific language governing permissions and  * limitations under the License.  */
-end_comment
-
 begin_package
 package|package
 name|models
 package|;
 end_package
-
-begin_import
-import|import
-name|be
-operator|.
-name|objectify
-operator|.
-name|deadbolt
-operator|.
-name|models
-operator|.
-name|Permission
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|db
-operator|.
-name|ebean
-operator|.
-name|Model
-import|;
-end_import
 
 begin_import
 import|import
@@ -55,8 +25,34 @@ name|Id
 import|;
 end_import
 
+begin_import
+import|import
+name|play
+operator|.
+name|db
+operator|.
+name|ebean
+operator|.
+name|Model
+import|;
+end_import
+
+begin_import
+import|import
+name|be
+operator|.
+name|objectify
+operator|.
+name|deadbolt
+operator|.
+name|models
+operator|.
+name|Permission
+import|;
+end_import
+
 begin_comment
-comment|/**  * @author Steve Chaloner (steve@objectify.be)  */
+comment|/**  * Initial version based on work by Steve Chaloner (steve@objectify.be) for  * Deadbolt2  */
 end_comment
 
 begin_class
@@ -70,6 +66,15 @@ name|Model
 implements|implements
 name|Permission
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 annotation|@
 name|Id
 specifier|public

@@ -430,6 +430,7 @@ name|hasErrors
 argument_list|()
 condition|)
 block|{
+comment|// User did not select whether to link or not link
 return|return
 name|badRequest
 argument_list|(
@@ -446,6 +447,7 @@ return|;
 block|}
 else|else
 block|{
+comment|// User made a choice :)
 return|return
 name|PlayAuthenticate
 operator|.
@@ -610,6 +612,7 @@ name|hasErrors
 argument_list|()
 condition|)
 block|{
+comment|// User did not select whether to merge or not merge
 return|return
 name|badRequest
 argument_list|(
@@ -628,6 +631,7 @@ return|;
 block|}
 else|else
 block|{
+comment|// User made a choice :)
 return|return
 name|PlayAuthenticate
 operator|.

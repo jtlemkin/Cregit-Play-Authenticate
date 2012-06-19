@@ -837,7 +837,7 @@ argument_list|(
 name|EXPIRES_KEY
 argument_list|)
 expr_stmt|;
-comment|// shouldn't be in any more, but just in case
+comment|// shouldn't be in any more, but just in case lets kill it from the cookie
 name|session
 operator|.
 name|remove
@@ -1318,6 +1318,7 @@ name|Session
 name|session
 parameter_list|)
 block|{
+comment|// TODO the cache is not ideal for this, because it might get cleared any time
 name|storeUserInCache
 argument_list|(
 name|session
@@ -1379,6 +1380,7 @@ name|Session
 name|session
 parameter_list|)
 block|{
+comment|// TODO the cache is not ideal for this, because it might get cleared any time
 name|storeUserInCache
 argument_list|(
 name|session
