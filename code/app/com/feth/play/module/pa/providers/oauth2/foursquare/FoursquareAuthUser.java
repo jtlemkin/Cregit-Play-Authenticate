@@ -78,6 +78,15 @@ name|FoursquareAuthUser
 extends|extends
 name|OAuth2AuthUser
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 comment|/** 	 * From: 	 * https://developer.foursquare.com/docs/responses/user 	 *  	 */
 specifier|private
 specifier|abstract

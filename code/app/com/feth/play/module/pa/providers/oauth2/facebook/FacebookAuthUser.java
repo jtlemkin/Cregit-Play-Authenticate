@@ -58,6 +58,15 @@ name|FacebookAuthUser
 extends|extends
 name|OAuth2AuthUser
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|abstract

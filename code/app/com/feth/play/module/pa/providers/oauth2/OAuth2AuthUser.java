@@ -43,6 +43,15 @@ name|OAuth2AuthUser
 extends|extends
 name|AuthUser
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|private
 name|OAuth2AuthInfo
 name|info
