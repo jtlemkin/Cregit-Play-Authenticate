@@ -1,8 +1,4 @@
 begin_unit|revision:0.9.5;language:Java;cregit-version:0.0.1
-begin_comment
-comment|/*  * Copyright 2012 Steve Chaloner  *  * Licensed under the Apache License, Version 2.0 (the "License");  * you may not use this file except in compliance with the License.  * You may obtain a copy of the License at  *  *     http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  * See the License for the specific language governing permissions and  * limitations under the License.  */
-end_comment
-
 begin_package
 package|package
 name|security
@@ -11,37 +7,9 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|models
 operator|.
 name|User
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|Logger
 import|;
 end_import
 
@@ -86,34 +54,6 @@ operator|.
 name|deadbolt
 operator|.
 name|DynamicResourceHandler
-import|;
-end_import
-
-begin_import
-import|import
-name|be
-operator|.
-name|objectify
-operator|.
-name|deadbolt
-operator|.
-name|models
-operator|.
-name|Permission
-import|;
-end_import
-
-begin_import
-import|import
-name|be
-operator|.
-name|objectify
-operator|.
-name|deadbolt
-operator|.
-name|models
-operator|.
-name|Role
 import|;
 end_import
 
@@ -178,6 +118,7 @@ specifier|public
 name|Result
 name|beforeRoleCheck
 parameter_list|(
+specifier|final
 name|Http
 operator|.
 name|Context
@@ -205,8 +146,10 @@ block|}
 else|else
 block|{
 comment|// user is not logged in
-comment|// call this if you want to redirect your visitor to the page that was requested before sending him to the login page
-comment|// if you don't call this, the user will get redirected to the page defined by your resolver
+comment|// call this if you want to redirect your visitor to the page that
+comment|// was requested before sending him to the login page
+comment|// if you don't call this, the user will get redirected to the page
+comment|// defined by your resolver
 specifier|final
 name|String
 name|originalUrl
@@ -254,6 +197,7 @@ specifier|public
 name|RoleHolder
 name|getRoleHolder
 parameter_list|(
+specifier|final
 name|Http
 operator|.
 name|Context
@@ -287,6 +231,7 @@ specifier|public
 name|DynamicResourceHandler
 name|getDynamicResourceHandler
 parameter_list|(
+specifier|final
 name|Http
 operator|.
 name|Context
@@ -303,11 +248,13 @@ specifier|public
 name|Result
 name|onAccessFailure
 parameter_list|(
+specifier|final
 name|Http
 operator|.
 name|Context
 name|context
 parameter_list|,
+specifier|final
 name|String
 name|content
 parameter_list|)
