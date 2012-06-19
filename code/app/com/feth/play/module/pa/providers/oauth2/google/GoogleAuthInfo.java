@@ -144,8 +144,10 @@ operator|.
 name|EXPIRES_IN
 argument_list|)
 operator|.
-name|asInt
+name|asLong
 argument_list|()
+operator|*
+literal|1000
 argument_list|)
 expr_stmt|;
 name|bearer

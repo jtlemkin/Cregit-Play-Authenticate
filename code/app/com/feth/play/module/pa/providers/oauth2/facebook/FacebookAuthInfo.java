@@ -138,6 +138,8 @@ argument_list|(
 name|EXPIRES
 argument_list|)
 argument_list|)
+operator|*
+literal|1000
 argument_list|)
 expr_stmt|;
 block|}

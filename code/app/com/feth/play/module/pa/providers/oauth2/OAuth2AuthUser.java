@@ -105,6 +105,21 @@ return|return
 name|id
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|long
+name|expires
+parameter_list|()
+block|{
+return|return
+name|getOAuth2AuthInfo
+argument_list|()
+operator|.
+name|getExpiration
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
