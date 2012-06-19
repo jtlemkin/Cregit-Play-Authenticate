@@ -56,21 +56,7 @@ specifier|public
 interface|interface
 name|UserService
 block|{
-comment|/** 	 * generates a user identity from an auth provider/id combination 	 *  	 * @param provider 	 * @param id 	 * @return 	 */
-specifier|public
-name|AuthUserIdentity
-name|find
-parameter_list|(
-specifier|final
-name|String
-name|provider
-parameter_list|,
-specifier|final
-name|String
-name|id
-parameter_list|)
-function_decl|;
-comment|/** 	 * Saves auth provider/id combination to a local user 	 * @param authUser 	 * @return 	 */
+comment|/** 	 * Saves auth provider/id combination to a local user 	 * @param authUser 	 * @return The local identifying object or null if the user existed 	 */
 specifier|public
 name|Object
 name|save
@@ -80,10 +66,10 @@ name|AuthUser
 name|authUser
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns true if the auth provider/id combination has been linked to a local user account already 	 * @param identity 	 * @return 	 */
+comment|/** 	 * Returns the local identifying object if the auth provider/id combination has been linked to a local user account already 	 * or null if not 	 *  	 * @param identity 	 * @return 	 */
 specifier|public
-name|boolean
-name|isLinked
+name|Object
+name|getLocalIdentity
 parameter_list|(
 specifier|final
 name|AuthUserIdentity

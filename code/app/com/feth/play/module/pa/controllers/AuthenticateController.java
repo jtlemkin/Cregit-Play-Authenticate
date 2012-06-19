@@ -265,18 +265,26 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
-name|boolean
-name|isLinked
+name|Object
+name|loginIdentity
 init|=
 name|PlayAuthenticate
 operator|.
 name|getUserService
 argument_list|()
 operator|.
-name|isLinked
+name|getLocalIdentity
 argument_list|(
 name|u
 argument_list|)
+decl_stmt|;
+specifier|final
+name|boolean
+name|isLinked
+init|=
+name|loginIdentity
+operator|!=
+literal|null
 decl_stmt|;
 comment|// get the user with which we are logged in - is null if we are
 comment|// not logged in
@@ -321,6 +329,34 @@ block|{
 comment|// 2. -> Merge
 comment|// merge the two identities and return the AuthUser we want
 comment|// to use for the log in
+if|if
+condition|(
+name|PlayAuthenticate
+operator|.
+name|isAccountMergeEnabled
+argument_list|()
+operator|&&
+operator|!
+name|loginIdentity
+operator|.
+name|equals
+argument_list|(
+name|PlayAuthenticate
+operator|.
+name|getUserService
+argument_list|()
+operator|.
+name|getLocalIdentity
+argument_list|(
+name|oldUser
+argument_list|)
+argument_list|)
+condition|)
+block|{
+comment|// account merge is enabled
+comment|// and
+comment|// The currently logged in user and the one to log in
+comment|// are not the same, so shall we merge?
 if|if
 condition|(
 name|PlayAuthenticate
@@ -389,6 +425,18 @@ argument_list|(
 name|c
 argument_list|)
 return|;
+block|}
+block|}
+else|else
+block|{
+comment|// the currently logged in user and the new login belong
+comment|// to the same local user,
+comment|// or Account merge is disabled, so just change the log
+comment|// in to the new user
+name|loginUser
+operator|=
+name|u
+expr_stmt|;
 block|}
 block|}
 elseif|else
