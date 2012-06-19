@@ -253,7 +253,21 @@ comment|// 3. The account is not linked to a local account and no
 comment|// session cookie is present --> Signup
 comment|// 4. The account is not linked to a local account and a session
 comment|// cookie is present --> Linking Additional account
-specifier|final
+comment|// get the user with which we are logged in - is null if we
+comment|// are
+comment|// not logged in (does NOT check expiration)
+name|AuthUser
+name|oldUser
+init|=
+name|PlayAuthenticate
+operator|.
+name|getUser
+argument_list|(
+name|ctx
+argument_list|()
+argument_list|)
+decl_stmt|;
+comment|// checks if the user is logged in (also checks the expiration!)
 name|boolean
 name|isLoggedIn
 init|=
@@ -265,6 +279,58 @@ name|session
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|Object
+name|oldIdentity
+init|=
+literal|null
+decl_stmt|;
+comment|// check if local user still exists - it might have been deactivated/deleted,
+comment|// so this is a signup, not a link
+if|if
+condition|(
+name|isLoggedIn
+condition|)
+block|{
+name|oldIdentity
+operator|=
+name|PlayAuthenticate
+operator|.
+name|getUserService
+argument_list|()
+operator|.
+name|getLocalIdentity
+argument_list|(
+name|oldUser
+argument_list|)
+expr_stmt|;
+name|isLoggedIn
+operator|&=
+name|oldIdentity
+operator|!=
+literal|null
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|isLoggedIn
+condition|)
+block|{
+comment|// if isLoggedIn is false here, then the local user has been deleted/deactivated
+comment|// so kill the session
+name|PlayAuthenticate
+operator|.
+name|logout
+argument_list|(
+name|session
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|oldUser
+operator|=
+literal|null
+expr_stmt|;
+block|}
+block|}
 specifier|final
 name|Object
 name|loginIdentity
@@ -300,9 +366,18 @@ name|isLoggedIn
 condition|)
 block|{
 comment|// 1. -> Login
+comment|// User logged in once more - wanna make some updates?
 name|loginUser
 operator|=
+name|PlayAuthenticate
+operator|.
+name|getUserService
+argument_list|()
+operator|.
+name|update
+argument_list|(
 name|u
+argument_list|)
 expr_stmt|;
 block|}
 elseif|else
@@ -314,21 +389,6 @@ name|isLoggedIn
 condition|)
 block|{
 comment|// 2. -> Merge
-comment|// get the user with which we are logged in - is null if we
-comment|// are
-comment|// not logged in
-specifier|final
-name|AuthUser
-name|oldUser
-init|=
-name|PlayAuthenticate
-operator|.
-name|getUser
-argument_list|(
-name|ctx
-argument_list|()
-argument_list|)
-decl_stmt|;
 comment|// merge the two identities and return the AuthUser we want
 comment|// to use for the log in
 if|if
@@ -343,15 +403,7 @@ name|loginIdentity
 operator|.
 name|equals
 argument_list|(
-name|PlayAuthenticate
-operator|.
-name|getUserService
-argument_list|()
-operator|.
-name|getLocalIdentity
-argument_list|(
-name|oldUser
-argument_list|)
+name|oldIdentity
 argument_list|)
 condition|)
 block|{
@@ -478,21 +530,6 @@ argument_list|()
 condition|)
 block|{
 comment|// Account auto linking is enabled
-comment|// get the user with which we are logged in - is null if
-comment|// we are
-comment|// not logged in
-specifier|final
-name|AuthUser
-name|oldUser
-init|=
-name|PlayAuthenticate
-operator|.
-name|getUser
-argument_list|(
-name|ctx
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|loginUser
 operator|=
 name|PlayAuthenticate
