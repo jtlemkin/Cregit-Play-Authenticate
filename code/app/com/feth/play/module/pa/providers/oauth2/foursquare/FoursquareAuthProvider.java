@@ -135,7 +135,9 @@ name|pa
 operator|.
 name|providers
 operator|.
-name|AuthUserIdentity
+name|oauth2
+operator|.
+name|OAuth2AuthProvider
 import|;
 end_import
 
@@ -151,11 +153,9 @@ name|module
 operator|.
 name|pa
 operator|.
-name|providers
+name|user
 operator|.
-name|oauth2
-operator|.
-name|OAuth2AuthProvider
+name|AuthUserIdentity
 import|;
 end_import
 

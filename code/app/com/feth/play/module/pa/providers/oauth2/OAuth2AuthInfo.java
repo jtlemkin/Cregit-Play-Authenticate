@@ -47,7 +47,7 @@ name|module
 operator|.
 name|pa
 operator|.
-name|providers
+name|user
 operator|.
 name|AuthUser
 import|;
