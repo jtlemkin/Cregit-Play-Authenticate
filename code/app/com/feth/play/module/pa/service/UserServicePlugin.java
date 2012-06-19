@@ -55,6 +55,24 @@ name|PlayAuthenticate
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|feth
+operator|.
+name|play
+operator|.
+name|module
+operator|.
+name|pa
+operator|.
+name|user
+operator|.
+name|AuthUser
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -121,6 +139,21 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|AuthUser
+name|update
+parameter_list|(
+name|AuthUser
+name|knownUser
+parameter_list|)
+block|{
+comment|// Default: just do nothing when user logs in again
+return|return
+name|knownUser
+return|;
 block|}
 block|}
 end_class

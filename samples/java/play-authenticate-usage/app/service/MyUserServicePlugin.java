@@ -252,6 +252,29 @@ return|return
 name|newUser
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|AuthUser
+name|update
+parameter_list|(
+specifier|final
+name|AuthUser
+name|knownUser
+parameter_list|)
+block|{
+comment|// User logged in again, bump last login date
+name|User
+operator|.
+name|setLastLoginDate
+argument_list|(
+name|knownUser
+argument_list|)
+expr_stmt|;
+return|return
+name|knownUser
+return|;
+block|}
 block|}
 end_class
 

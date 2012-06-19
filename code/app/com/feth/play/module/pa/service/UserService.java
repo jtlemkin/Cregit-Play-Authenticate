@@ -104,6 +104,16 @@ name|AuthUser
 name|newUser
 parameter_list|)
 function_decl|;
+comment|/** 	 * Gets called when a user logs in - you might make profile updates here with data coming from the login provider 	 * or bump a last-logged-in date 	 *  	 * @param knownUser 	 * @return 	 */
+specifier|public
+name|AuthUser
+name|update
+parameter_list|(
+specifier|final
+name|AuthUser
+name|knownUser
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
