@@ -505,7 +505,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns either an AuthUser object or a String (URL) 	 *  	 * @param context 	 * @return 	 * @throws AuthException 	 */
+comment|/** 	 * Returns either an AuthUser object or a String (URL) 	 *  	 * @param context 	 * @param payload Some arbitrary payload that shall get passed into the authentication process 	 * @return 	 * @throws AuthException 	 */
 specifier|public
 specifier|abstract
 name|Object
@@ -514,6 +514,10 @@ parameter_list|(
 specifier|final
 name|Context
 name|context
+parameter_list|,
+specifier|final
+name|Object
+name|payload
 parameter_list|)
 throws|throws
 name|AuthException

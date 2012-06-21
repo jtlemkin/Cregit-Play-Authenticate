@@ -981,6 +981,10 @@ parameter_list|(
 specifier|final
 name|Context
 name|context
+parameter_list|,
+specifier|final
+name|Object
+name|payload
 parameter_list|)
 throws|throws
 name|AuthException
