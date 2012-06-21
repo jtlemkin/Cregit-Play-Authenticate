@@ -227,6 +227,10 @@ specifier|final
 name|String
 name|PROVIDER_KEY
 init|=
+name|PROVIDER_KEY_BASE
+operator|+
+literal|"."
+operator|+
 literal|"facebook"
 decl_stmt|;
 specifier|private

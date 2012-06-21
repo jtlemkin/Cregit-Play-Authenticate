@@ -316,6 +316,14 @@ parameter_list|>
 extends|extends
 name|AuthProvider
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|String
+name|PROVIDER_KEY_BASE
+init|=
+literal|"oauth2"
+decl_stmt|;
 specifier|public
 name|OAuth2AuthProvider
 parameter_list|(
