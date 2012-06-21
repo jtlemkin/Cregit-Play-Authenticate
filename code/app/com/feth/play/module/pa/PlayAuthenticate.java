@@ -312,6 +312,13 @@ name|Call
 name|askLink
 parameter_list|()
 function_decl|;
+comment|/** 		 * Route to redirect to after logout has been finished. 		 * If you return null here, the user will get redirected to the URL of 		 * the setting 		 * afterLogoutFallback 		 * You can use this to redirect to an external URL for example. 		 *  		 * @return 		 */
+specifier|public
+specifier|abstract
+name|Call
+name|afterLogout
+parameter_list|()
+function_decl|;
 block|}
 specifier|private
 specifier|static
@@ -844,7 +851,7 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|void
+name|Result
 name|logout
 parameter_list|(
 specifier|final
@@ -882,6 +889,23 @@ argument_list|(
 name|ORIGINAL_URL
 argument_list|)
 expr_stmt|;
+return|return
+name|Controller
+operator|.
+name|redirect
+argument_list|(
+name|getUrl
+argument_list|(
+name|getResolver
+argument_list|()
+operator|.
+name|afterLogout
+argument_list|()
+argument_list|,
+literal|"afterLogoutFallback"
+argument_list|)
+argument_list|)
+return|;
 block|}
 specifier|public
 specifier|static
@@ -1499,18 +1523,36 @@ return|;
 block|}
 else|else
 block|{
-comment|// this can be null if the user did not correctly define the
-comment|// resolver
-specifier|final
-name|Call
-name|c
-init|=
+return|return
+name|getUrl
+argument_list|(
 name|getResolver
 argument_list|()
 operator|.
 name|afterAuth
 argument_list|()
-decl_stmt|;
+argument_list|,
+literal|"afterAuthFallback"
+argument_list|)
+return|;
+block|}
+block|}
+specifier|private
+specifier|static
+name|String
+name|getUrl
+parameter_list|(
+specifier|final
+name|Call
+name|c
+parameter_list|,
+specifier|final
+name|String
+name|settingFallback
+parameter_list|)
+block|{
+comment|// this can be null if the user did not correctly define the
+comment|// resolver
 if|if
 condition|(
 name|c
@@ -1532,7 +1574,7 @@ name|Logger
 operator|.
 name|warn
 argument_list|(
-literal|"Resolver did not contain information about where to go after authentication - redirecting to /"
+literal|"Resolver did not contain information about where to go - redirecting to /"
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -1544,7 +1586,7 @@ argument_list|()
 operator|.
 name|getString
 argument_list|(
-literal|"afterAuthFallback"
+name|settingFallback
 argument_list|)
 decl_stmt|;
 if|if
@@ -1571,13 +1613,16 @@ name|Logger
 operator|.
 name|error
 argument_list|(
-literal|"Config setting 'afterAuthFallback' was not present!"
+literal|"Config setting '"
+operator|+
+name|settingFallback
+operator|+
+literal|"' was not present!"
 argument_list|)
 expr_stmt|;
 return|return
 literal|"/"
 return|;
-block|}
 block|}
 block|}
 specifier|public
@@ -1893,17 +1938,17 @@ parameter_list|,
 specifier|final
 name|Context
 name|context
+parameter_list|,
+specifier|final
+name|Object
+name|payload
 parameter_list|)
 block|{
 specifier|final
 name|AuthProvider
 name|ap
 init|=
-name|AuthProvider
-operator|.
-name|Registry
-operator|.
-name|get
+name|getProvider
 argument_list|(
 name|provider
 argument_list|)
@@ -1921,7 +1966,11 @@ return|return
 name|Controller
 operator|.
 name|notFound
-argument_list|()
+argument_list|(
+name|provider
+operator|+
+literal|" could not be found"
+argument_list|)
 return|;
 block|}
 try|try
@@ -1935,6 +1984,8 @@ operator|.
 name|authenticate
 argument_list|(
 name|context
+argument_list|,
+name|payload
 argument_list|)
 decl_stmt|;
 if|if
@@ -2379,6 +2430,27 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+block|}
+specifier|public
+specifier|static
+name|AuthProvider
+name|getProvider
+parameter_list|(
+specifier|final
+name|String
+name|providerKey
+parameter_list|)
+block|{
+return|return
+name|AuthProvider
+operator|.
+name|Registry
+operator|.
+name|get
+argument_list|(
+name|providerKey
+argument_list|)
+return|;
 block|}
 block|}
 end_class
