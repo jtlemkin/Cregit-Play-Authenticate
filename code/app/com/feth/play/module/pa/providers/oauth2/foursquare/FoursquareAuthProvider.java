@@ -171,16 +171,11 @@ argument_list|,
 name|FoursquareAuthInfo
 argument_list|>
 block|{
-specifier|public
 specifier|static
 specifier|final
 name|String
 name|PROVIDER_KEY
 init|=
-name|PROVIDER_KEY_BASE
-operator|+
-literal|"."
-operator|+
 literal|"foursquare"
 decl_stmt|;
 specifier|private
