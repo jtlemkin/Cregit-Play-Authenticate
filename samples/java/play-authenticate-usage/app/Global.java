@@ -205,9 +205,9 @@ block|{
 return|return
 name|routes
 operator|.
-name|Application
+name|Account
 operator|.
-name|merge
+name|askMerge
 argument_list|()
 return|;
 block|}
@@ -221,9 +221,9 @@ block|{
 return|return
 name|routes
 operator|.
-name|Application
+name|Account
 operator|.
-name|link
+name|askLink
 argument_list|()
 return|;
 block|}

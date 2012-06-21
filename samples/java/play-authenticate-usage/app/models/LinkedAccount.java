@@ -132,6 +132,7 @@ specifier|static
 name|LinkedAccount
 name|create
 parameter_list|(
+specifier|final
 name|LinkedAccount
 name|acc
 parameter_list|)
