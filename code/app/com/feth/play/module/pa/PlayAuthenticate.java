@@ -1062,11 +1062,13 @@ literal|null
 condition|)
 block|{
 return|return
-operator|new
-name|SessionAuthUser
+name|getProvider
 argument_list|(
 name|provider
-argument_list|,
+argument_list|)
+operator|.
+name|getSessionAuthUser
+argument_list|(
 name|id
 argument_list|,
 name|expires

@@ -18,12 +18,15 @@ end_package
 begin_interface
 specifier|public
 interface|interface
-name|BasicIdentity
-extends|extends
 name|EmailIdentity
-extends|,
-name|NameIdentity
-block|{ }
+extends|extends
+name|AuthUserIdentity
+block|{
+name|String
+name|getEmail
+parameter_list|()
+function_decl|;
+block|}
 end_interface
 
 end_unit

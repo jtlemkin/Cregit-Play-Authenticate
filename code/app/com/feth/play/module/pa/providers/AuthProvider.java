@@ -145,6 +145,24 @@ name|AuthException
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|feth
+operator|.
+name|play
+operator|.
+name|module
+operator|.
+name|pa
+operator|.
+name|user
+operator|.
+name|AuthUser
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -552,6 +570,18 @@ return|return
 literal|null
 return|;
 block|}
+specifier|public
+specifier|abstract
+name|AuthUser
+name|getSessionAuthUser
+parameter_list|(
+name|String
+name|id
+parameter_list|,
+name|long
+name|expires
+parameter_list|)
+function_decl|;
 block|}
 end_class
 
