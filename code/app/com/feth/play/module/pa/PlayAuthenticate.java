@@ -51,6 +51,16 @@ begin_import
 import|import
 name|play
 operator|.
+name|i18n
+operator|.
+name|Messages
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
 name|mvc
 operator|.
 name|Call
@@ -198,24 +208,6 @@ operator|.
 name|user
 operator|.
 name|AuthUser
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|feth
-operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|pa
-operator|.
-name|user
-operator|.
-name|SessionAuthUser
 import|;
 end_import
 
@@ -392,7 +384,12 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"No UserService registered!"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.core.exception.no_user_service"
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -1883,7 +1880,7 @@ name|loginUser
 argument_list|)
 return|;
 block|}
-specifier|public
+specifier|private
 specifier|static
 name|AuthUser
 name|signupUser
@@ -1922,7 +1919,12 @@ throw|throw
 operator|new
 name|AuthException
 argument_list|(
-literal|"Could not sign you up"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.core.exception.singupuser_failed"
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -1975,9 +1977,14 @@ name|Controller
 operator|.
 name|notFound
 argument_list|(
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.core.exception.provider_not_found"
+argument_list|,
 name|provider
-operator|+
-literal|" could not be found"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -2240,7 +2247,14 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Merge controller not defined, even though accountAutoMerge is set to false"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.core.exception.merge.controller_undefined"
+argument_list|,
+name|SETTING_KEY_ACCOUNT_AUTO_MERGE
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -2341,7 +2355,14 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Link controller not defined, even though accountAutoLink is set to false"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.core.exception.link.controller_undefined"
+argument_list|,
+name|SETTING_KEY_ACCOUNT_AUTO_LINK
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -2378,7 +2399,12 @@ name|Controller
 operator|.
 name|internalServerError
 argument_list|(
-literal|"Something went wrong"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.core.exception.general"
+argument_list|)
 argument_list|)
 return|;
 block|}
