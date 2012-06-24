@@ -297,6 +297,10 @@ specifier|final
 name|String
 name|SETTING_KEY_VERIFICATION_LINK_SECURE
 init|=
+name|SETTING_KEY_MAIL
+operator|+
+literal|"."
+operator|+
 literal|"verificationLink.secure"
 decl_stmt|;
 annotation|@
