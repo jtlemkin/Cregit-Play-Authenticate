@@ -582,6 +582,12 @@ name|long
 name|expires
 parameter_list|)
 function_decl|;
+specifier|public
+specifier|abstract
+name|boolean
+name|isExternal
+parameter_list|()
+function_decl|;
 block|}
 end_class
 

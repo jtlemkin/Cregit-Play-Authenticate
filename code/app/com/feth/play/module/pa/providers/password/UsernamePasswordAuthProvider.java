@@ -1817,6 +1817,17 @@ name|verifyMail
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isExternal
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 specifier|protected
 specifier|abstract
 name|String

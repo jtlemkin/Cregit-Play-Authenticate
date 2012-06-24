@@ -1232,6 +1232,17 @@ parameter_list|)
 throws|throws
 name|AuthException
 function_decl|;
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isExternal
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
