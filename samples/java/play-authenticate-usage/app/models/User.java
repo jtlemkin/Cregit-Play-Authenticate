@@ -117,6 +117,16 @@ end_import
 
 begin_import
 import|import
+name|javax
+operator|.
+name|persistence
+operator|.
+name|Table
+import|;
+end_import
+
+begin_import
+import|import
 name|play
 operator|.
 name|data
@@ -330,6 +340,13 @@ end_comment
 begin_class
 annotation|@
 name|Entity
+annotation|@
+name|Table
+argument_list|(
+name|name
+operator|=
+literal|"users"
+argument_list|)
 specifier|public
 class|class
 name|User
