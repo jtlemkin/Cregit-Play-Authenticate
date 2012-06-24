@@ -1468,14 +1468,16 @@ name|long
 name|expires
 parameter_list|)
 block|{
-comment|// TODO implement expiry and use a custom impl
 return|return
 operator|new
-name|DefaultUsernamePasswordAuthUser
+name|SessionUsernamePasswordAuthUser
 argument_list|(
-literal|null
+name|getKey
+argument_list|()
 argument_list|,
 name|id
+argument_list|,
+name|expires
 argument_list|)
 return|;
 block|}
