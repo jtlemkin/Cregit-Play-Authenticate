@@ -191,7 +191,7 @@ name|flash
 argument_list|(
 literal|"message"
 argument_list|,
-literal|"email address successfully verified"
+literal|"Email address successfully verified"
 argument_list|)
 expr_stmt|;
 return|return

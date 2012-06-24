@@ -259,9 +259,14 @@ name|String
 name|content
 parameter_list|)
 block|{
+comment|// if the user has a cookie with a valid user and the local user has
+comment|// been deactivated/deleted in between, it is possible that this gets
+comment|// shown. You might want to consider to sign the user out in this case.
 return|return
 name|forbidden
-argument_list|()
+argument_list|(
+literal|"Forbidden"
+argument_list|)
 return|;
 block|}
 block|}
