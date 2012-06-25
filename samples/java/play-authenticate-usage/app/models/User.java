@@ -466,6 +466,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -480,6 +482,8 @@ return|return
 name|roles
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
