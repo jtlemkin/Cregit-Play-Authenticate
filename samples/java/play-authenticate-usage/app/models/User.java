@@ -372,13 +372,9 @@ name|id
 decl_stmt|;
 annotation|@
 name|Email
-annotation|@
-name|Column
-argument_list|(
-name|unique
-operator|=
-literal|true
-argument_list|)
+comment|// if you make this unique, keep in mind that users *must* merge/link their
+comment|// accounts then on signup with additional providers
+comment|// @Column(unique = true)
 specifier|public
 name|String
 name|email
