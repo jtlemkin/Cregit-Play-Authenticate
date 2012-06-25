@@ -612,6 +612,17 @@ block|{
 if|if
 condition|(
 name|identity
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+if|if
+condition|(
+name|identity
 operator|instanceof
 name|UsernamePasswordAuthUser
 condition|)
