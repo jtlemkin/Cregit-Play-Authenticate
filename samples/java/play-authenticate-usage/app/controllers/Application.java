@@ -217,7 +217,9 @@ block|}
 annotation|@
 name|Restrict
 argument_list|(
-literal|"user"
+name|Application
+operator|.
+name|USER_ROLE
 argument_list|)
 specifier|public
 specifier|static
@@ -250,24 +252,25 @@ block|}
 annotation|@
 name|Restrict
 argument_list|(
-literal|"user"
-argument_list|)
+name|Application
+operator|.
+name|USER_ROLE
 specifier|public
 specifier|static
 name|Result
 name|profile
-parameter_list|()
+argument_list|()
 block|{
-specifier|final
+name|final
 name|User
 name|localUser
-init|=
+operator|=
 name|getLocalUser
 argument_list|(
 name|session
 argument_list|()
 argument_list|)
-decl_stmt|;
+empty_stmt|;
 return|return
 name|ok
 argument_list|(
@@ -280,6 +283,9 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+end_class
+
+begin_function
 specifier|public
 specifier|static
 name|Result
@@ -300,6 +306,9 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|Result
@@ -355,6 +364,9 @@ argument_list|)
 return|;
 block|}
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|Result
@@ -375,6 +387,9 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|Result
@@ -432,6 +447,9 @@ argument_list|)
 return|;
 block|}
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|String
@@ -459,8 +477,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-block|}
-end_class
+end_function
 
+unit|}
 end_unit
 
