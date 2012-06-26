@@ -146,6 +146,7 @@ decl_stmt|;
 block|}
 specifier|public
 specifier|static
+specifier|final
 name|Form
 argument_list|<
 name|Accept
