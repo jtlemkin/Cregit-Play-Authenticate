@@ -257,6 +257,10 @@ name|transform
 parameter_list|(
 name|FacebookAuthInfo
 name|info
+parameter_list|,
+specifier|final
+name|String
+name|state
 parameter_list|)
 throws|throws
 name|AuthException
@@ -368,6 +372,8 @@ argument_list|(
 name|result
 argument_list|,
 name|info
+argument_list|,
+name|state
 argument_list|)
 return|;
 block|}

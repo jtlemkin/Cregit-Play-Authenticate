@@ -300,6 +300,10 @@ parameter_list|(
 specifier|final
 name|FoursquareAuthInfo
 name|info
+parameter_list|,
+specifier|final
+name|String
+name|state
 parameter_list|)
 throws|throws
 name|AuthException
@@ -423,6 +427,8 @@ literal|"user"
 argument_list|)
 argument_list|,
 name|info
+argument_list|,
+name|state
 argument_list|)
 return|;
 block|}

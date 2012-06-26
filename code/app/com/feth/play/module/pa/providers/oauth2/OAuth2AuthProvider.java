@@ -1068,6 +1068,29 @@ operator|.
 name|request
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|Logger
+operator|.
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|Logger
+operator|.
+name|debug
+argument_list|(
+literal|"Returned with URL: '"
+operator|+
+name|request
+operator|.
+name|uri
+argument_list|()
+operator|+
+literal|"'"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|final
 name|String
 name|error
@@ -1092,6 +1115,20 @@ argument_list|(
 name|Constants
 operator|.
 name|CODE
+argument_list|)
+decl_stmt|;
+comment|// Attention: facebook does *not* support state that is non-ASCII - not even encoded.
+specifier|final
+name|String
+name|state
+init|=
+name|request
+operator|.
+name|getQueryString
+argument_list|(
+name|Constants
+operator|.
+name|STATE
 argument_list|)
 decl_stmt|;
 if|if
@@ -1192,6 +1229,8 @@ init|=
 name|transform
 argument_list|(
 name|info
+argument_list|,
+name|state
 argument_list|)
 decl_stmt|;
 return|return
@@ -1210,7 +1249,7 @@ name|getAuthUrl
 argument_list|(
 name|request
 argument_list|,
-literal|null
+name|state
 argument_list|)
 decl_stmt|;
 name|Logger
@@ -1253,7 +1292,7 @@ name|expires
 argument_list|)
 return|;
 block|}
-comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementaion 	 *  	 * @param info 	 * @return 	 * @throws AuthException 	 */
+comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementaion 	 *  	 * @param info 	 * @param state 	 * @return 	 * @throws AuthException 	 */
 specifier|protected
 specifier|abstract
 name|AuthUserIdentity
@@ -1262,6 +1301,10 @@ parameter_list|(
 specifier|final
 name|I
 name|info
+parameter_list|,
+specifier|final
+name|String
+name|state
 parameter_list|)
 throws|throws
 name|AuthException

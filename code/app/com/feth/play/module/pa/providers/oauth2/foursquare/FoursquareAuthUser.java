@@ -351,6 +351,10 @@ parameter_list|,
 specifier|final
 name|OAuth2AuthInfo
 name|info
+parameter_list|,
+specifier|final
+name|String
+name|state
 parameter_list|)
 block|{
 name|super
@@ -368,6 +372,8 @@ name|asText
 argument_list|()
 argument_list|,
 name|info
+argument_list|,
+name|state
 argument_list|)
 expr_stmt|;
 name|this
