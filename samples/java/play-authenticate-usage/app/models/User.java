@@ -738,7 +738,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// do all other mergin stuff here - like resources, etc.
+comment|// do all other merging stuff here - like resources, etc.
 comment|// deactivate the merged user that got added to this one
 name|otherUser
 operator|.
