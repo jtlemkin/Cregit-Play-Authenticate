@@ -249,7 +249,6 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|// Fixing missing right paren
 annotation|@
 name|Restrict
 argument_list|(
