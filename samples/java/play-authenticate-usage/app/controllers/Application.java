@@ -249,28 +249,30 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+comment|// Fixing missing right paren
 annotation|@
 name|Restrict
 argument_list|(
 name|Application
 operator|.
 name|USER_ROLE
+argument_list|)
 specifier|public
 specifier|static
 name|Result
 name|profile
-argument_list|()
+parameter_list|()
 block|{
-name|final
+specifier|final
 name|User
 name|localUser
-operator|=
+init|=
 name|getLocalUser
 argument_list|(
 name|session
 argument_list|()
 argument_list|)
-empty_stmt|;
+decl_stmt|;
 return|return
 name|ok
 argument_list|(
@@ -283,9 +285,6 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-end_class
-
-begin_function
 specifier|public
 specifier|static
 name|Result
@@ -306,9 +305,6 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-end_function
-
-begin_function
 specifier|public
 specifier|static
 name|Result
@@ -364,9 +360,6 @@ argument_list|)
 return|;
 block|}
 block|}
-end_function
-
-begin_function
 specifier|public
 specifier|static
 name|Result
@@ -387,9 +380,6 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-end_function
-
-begin_function
 specifier|public
 specifier|static
 name|Result
@@ -447,9 +437,6 @@ argument_list|)
 return|;
 block|}
 block|}
-end_function
-
-begin_function
 specifier|public
 specifier|static
 name|String
@@ -477,8 +464,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-end_function
+block|}
+end_class
 
-unit|}
 end_unit
 
