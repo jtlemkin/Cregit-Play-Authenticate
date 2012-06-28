@@ -244,7 +244,7 @@ name|AccessTokenException
 argument_list|(
 name|r
 operator|.
-name|getStatusText
+name|toString
 argument_list|()
 argument_list|)
 throw|;
