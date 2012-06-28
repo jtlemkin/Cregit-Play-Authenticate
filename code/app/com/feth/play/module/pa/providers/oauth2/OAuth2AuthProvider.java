@@ -1153,7 +1153,10 @@ block|{
 throw|throw
 operator|new
 name|AccessDeniedException
+argument_list|(
+name|getKey
 argument_list|()
+argument_list|)
 throw|;
 block|}
 elseif|else
