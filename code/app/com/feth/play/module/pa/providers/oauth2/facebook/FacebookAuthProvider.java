@@ -221,6 +221,14 @@ argument_list|,
 name|FacebookAuthInfo
 argument_list|>
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|MESSAGE
+init|=
+literal|"message"
+decl_stmt|;
 specifier|static
 specifier|final
 name|String
@@ -345,7 +353,7 @@ name|result
 operator|.
 name|get
 argument_list|(
-literal|"message"
+name|MESSAGE
 argument_list|)
 operator|.
 name|asText
@@ -423,7 +431,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"message"
+name|MESSAGE
 argument_list|)
 operator|.
 name|asText
