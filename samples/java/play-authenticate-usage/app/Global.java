@@ -300,6 +300,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|// more custom problem handling here...
 return|return
 name|super
 operator|.
