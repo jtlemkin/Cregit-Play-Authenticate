@@ -676,9 +676,22 @@ name|session
 parameter_list|,
 specifier|final
 name|AuthUser
-name|u
+name|authUser
 parameter_list|)
 block|{
+comment|// User logged in once more - wanna make some updates?
+specifier|final
+name|AuthUser
+name|u
+init|=
+name|getUserService
+argument_list|()
+operator|.
+name|update
+argument_list|(
+name|authUser
+argument_list|)
+decl_stmt|;
 name|session
 operator|.
 name|put
@@ -2163,16 +2176,9 @@ name|isLoggedIn
 condition|)
 block|{
 comment|// 1. -> Login
-comment|// User logged in once more - wanna make some updates?
 name|loginUser
 operator|=
-name|getUserService
-argument_list|()
-operator|.
-name|update
-argument_list|(
 name|newUser
-argument_list|)
 expr_stmt|;
 block|}
 elseif|else

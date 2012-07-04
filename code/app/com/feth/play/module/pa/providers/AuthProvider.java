@@ -219,9 +219,11 @@ specifier|static
 name|void
 name|register
 parameter_list|(
+specifier|final
 name|String
 name|provider
 parameter_list|,
+specifier|final
 name|AuthProvider
 name|p
 parameter_list|)
@@ -264,6 +266,7 @@ specifier|static
 name|void
 name|unregister
 parameter_list|(
+specifier|final
 name|String
 name|provider
 parameter_list|)
@@ -281,6 +284,7 @@ specifier|static
 name|AuthProvider
 name|get
 parameter_list|(
+specifier|final
 name|String
 name|provider
 parameter_list|)

@@ -57,6 +57,23 @@ specifier|private
 name|long
 name|expiration
 decl_stmt|;
+comment|/** 	 * For logging the user in automatically 	 *  	 * @param email 	 */
+specifier|public
+name|MyLoginUsernamePasswordAuthUser
+parameter_list|(
+specifier|final
+name|String
+name|email
+parameter_list|)
+block|{
+name|this
+argument_list|(
+literal|null
+argument_list|,
+name|email
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|MyLoginUsernamePasswordAuthUser
 parameter_list|(

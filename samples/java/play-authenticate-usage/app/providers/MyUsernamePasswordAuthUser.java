@@ -104,6 +104,27 @@ operator|.
 name|name
 expr_stmt|;
 block|}
+comment|/** 	 * Used for password reset only - do not use this to signup a user! 	 * @param password 	 */
+specifier|public
+name|MyUsernamePasswordAuthUser
+parameter_list|(
+specifier|final
+name|String
+name|password
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|password
+argument_list|,
+literal|null
+argument_list|)
+expr_stmt|;
+name|name
+operator|=
+literal|null
+expr_stmt|;
+block|}
 annotation|@
 name|Override
 specifier|public
