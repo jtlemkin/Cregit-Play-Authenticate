@@ -534,7 +534,7 @@ literal|null
 return|;
 block|}
 block|}
-specifier|private
+specifier|public
 specifier|static
 specifier|final
 name|Form
@@ -552,7 +552,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|private
+specifier|public
 specifier|static
 specifier|final
 name|Form
