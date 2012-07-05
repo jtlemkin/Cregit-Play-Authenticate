@@ -1308,23 +1308,6 @@ return|;
 case|case
 name|USER_EXISTS_UNVERIFIED
 case|:
-comment|// TODO: resend validation email after X minutes?
-name|sendVerifyEmailMailing
-argument_list|(
-name|context
-argument_list|,
-name|authUser
-argument_list|)
-expr_stmt|;
-return|return
-name|userUnverified
-argument_list|(
-name|authUser
-argument_list|)
-operator|.
-name|url
-argument_list|()
-return|;
 case|case
 name|USER_CREATED_UNVERIFIED
 case|:
