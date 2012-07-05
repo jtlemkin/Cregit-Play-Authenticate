@@ -339,10 +339,15 @@ name|emailValidated
 condition|)
 block|{
 comment|// E-Mail has been validated already
-return|return
-name|forbidden
-argument_list|()
-return|;
+name|flash
+argument_list|(
+name|Application
+operator|.
+name|FLASH_MESSAGE_KEY
+argument_list|,
+literal|"Your email has already been validated!"
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -372,6 +377,7 @@ name|ctx
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|redirect
 argument_list|(
@@ -383,7 +389,6 @@ name|profile
 argument_list|()
 argument_list|)
 return|;
-block|}
 block|}
 annotation|@
 name|Restrict
