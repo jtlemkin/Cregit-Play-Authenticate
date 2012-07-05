@@ -1285,6 +1285,10 @@ parameter_list|(
 specifier|final
 name|UsernamePasswordAuthUser
 name|authUser
+parameter_list|,
+specifier|final
+name|boolean
+name|create
 parameter_list|)
 block|{
 comment|// You might want to wrap this into a transaction
@@ -1294,7 +1298,7 @@ name|changePassword
 argument_list|(
 name|authUser
 argument_list|,
-literal|false
+name|create
 argument_list|)
 expr_stmt|;
 name|TokenAction

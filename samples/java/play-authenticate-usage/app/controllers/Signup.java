@@ -671,6 +671,11 @@ name|ta
 operator|.
 name|targetUser
 decl_stmt|;
+try|try
+block|{
+comment|// Pass true for the second parameter if you want to
+comment|// automatically create a password and the exception never to
+comment|// happen
 name|u
 operator|.
 name|resetPassword
@@ -680,8 +685,28 @@ name|MyUsernamePasswordAuthUser
 argument_list|(
 name|newPassword
 argument_list|)
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+specifier|final
+name|RuntimeException
+name|re
+parameter_list|)
+block|{
+name|flash
+argument_list|(
+name|Application
+operator|.
+name|FLASH_MESSAGE_KEY
+argument_list|,
+literal|"Your user has not been set up for password usage, yet"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|final
 name|boolean
 name|login
@@ -739,6 +764,7 @@ argument_list|,
 literal|"Your password has been reset - please log in with your new password now"
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|redirect
 argument_list|(
@@ -750,7 +776,6 @@ name|login
 argument_list|()
 argument_list|)
 return|;
-block|}
 block|}
 block|}
 specifier|public
