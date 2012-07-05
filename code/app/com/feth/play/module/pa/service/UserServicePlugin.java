@@ -128,7 +128,7 @@ name|Logger
 operator|.
 name|warn
 argument_list|(
-literal|"A user service was already registered - replacing the old one,"
+literal|"A user service was already registered - replacing the old one, "
 operator|+
 literal|"however this might hint to a configuration problem if this is a production environment."
 argument_list|)
