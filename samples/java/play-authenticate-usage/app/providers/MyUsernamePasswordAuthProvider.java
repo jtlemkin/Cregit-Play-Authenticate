@@ -534,8 +534,9 @@ literal|null
 return|;
 block|}
 block|}
-specifier|public
+specifier|private
 specifier|static
+specifier|final
 name|Form
 argument_list|<
 name|MySignup
@@ -551,8 +552,9 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
+specifier|final
 name|Form
 argument_list|<
 name|MyLogin
