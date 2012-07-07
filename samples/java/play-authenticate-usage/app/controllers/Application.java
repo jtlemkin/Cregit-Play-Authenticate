@@ -180,6 +180,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|FLASH_ERROR_KEY
+init|=
+literal|"error"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|USER_ROLE
 init|=
 literal|"user"

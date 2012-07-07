@@ -946,7 +946,11 @@ argument_list|()
 operator|.
 name|put
 argument_list|(
-literal|"error"
+name|controllers
+operator|.
+name|Application
+operator|.
+name|FLASH_ERROR_KEY
 argument_list|,
 name|Messages
 operator|.
