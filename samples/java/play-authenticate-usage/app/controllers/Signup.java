@@ -45,6 +45,16 @@ begin_import
 import|import
 name|play
 operator|.
+name|i18n
+operator|.
+name|Messages
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
 name|mvc
 operator|.
 name|Controller
@@ -338,11 +348,14 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Instructions on how to reset the password have been sent to "
-operator|+
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.reset_password.message.instructions_sent"
+argument_list|,
 name|email
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -410,7 +423,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Your account has not been verified, yet. An email has been sent with instructions on how to verify it. Retry resetting your password afterwards."
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.reset_password.message.email_not_verified"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// You might want to re-send the verification email here...
@@ -703,7 +721,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Your user has not been set up for password usage, yet"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.reset_password.message.no_password_account"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -731,7 +754,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Your password has been reset"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.reset_password.message.success.auto_login"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -761,7 +789,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Your password has been reset - please log in with your new password now"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.reset_password.message.success.manual_login"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -856,6 +889,16 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+specifier|final
+name|String
+name|email
+init|=
+name|ta
+operator|.
+name|targetUser
+operator|.
+name|email
+decl_stmt|;
 name|User
 operator|.
 name|verify
@@ -871,7 +914,14 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Email address successfully verified!"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.verify_email.success"
+argument_list|,
+name|email
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

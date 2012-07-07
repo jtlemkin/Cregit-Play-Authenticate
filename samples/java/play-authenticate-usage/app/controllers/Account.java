@@ -131,6 +131,16 @@ begin_import
 import|import
 name|play
 operator|.
+name|i18n
+operator|.
+name|Messages
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
 name|mvc
 operator|.
 name|Controller
@@ -244,7 +254,12 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"Passwords don't match!"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.change_password.error.passwords_not_same"
+argument_list|)
 return|;
 block|}
 return|return
@@ -345,7 +360,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Your email has already been validated!"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.verify_email.error.already_validated"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -357,11 +377,16 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Instructions on how to verify your email address have been sent to "
-operator|+
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.verify_email.message.instructions_sent"
+argument_list|,
 name|user
 operator|.
 name|email
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|MyUsernamePasswordAuthProvider
@@ -540,7 +565,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Password has been changed successfully!"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.change_password.success"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -710,7 +740,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Account linked successfully"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.accounts.link.success"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -915,7 +950,12 @@ name|Application
 operator|.
 name|FLASH_MESSAGE_KEY
 argument_list|,
-literal|"Accounts merged successfully"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.accounts.merge.success"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

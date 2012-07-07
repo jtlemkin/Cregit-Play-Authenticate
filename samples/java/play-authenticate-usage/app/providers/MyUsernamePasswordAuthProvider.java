@@ -526,7 +526,12 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"Passwords don't match!"
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.password.signup.error.passwords_not_same"
+argument_list|)
 return|;
 block|}
 return|return
@@ -919,7 +924,7 @@ name|Messages
 operator|.
 name|get
 argument_list|(
-literal|"password.verify_signup.subject"
+literal|"playauthenticate.password.verify_signup.subject"
 argument_list|)
 return|;
 block|}
@@ -943,7 +948,12 @@ name|put
 argument_list|(
 literal|"error"
 argument_list|,
-literal|"User could not be found or password was wrong."
+name|Messages
+operator|.
+name|get
+argument_list|(
+literal|"playauthenticate.password.login.unknown_user_or_pw"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1205,7 +1215,7 @@ name|Messages
 operator|.
 name|get
 argument_list|(
-literal|"password.reset_email.subject"
+literal|"playauthenticate.password.reset_email.subject"
 argument_list|)
 return|;
 block|}
@@ -1421,7 +1431,7 @@ name|Messages
 operator|.
 name|get
 argument_list|(
-literal|"password.verify_email.subject"
+literal|"playauthenticate.password.verify_email.subject"
 argument_list|)
 return|;
 block|}
