@@ -223,13 +223,7 @@ name|providers
 operator|.
 name|password
 operator|.
-name|UsernamePasswordAuthProvider
-operator|.
-name|Mailer
-operator|.
-name|Mail
-operator|.
-name|Body
+name|UsernamePasswordAuthUser
 import|;
 end_import
 
@@ -243,13 +237,13 @@ name|play
 operator|.
 name|module
 operator|.
-name|pa
+name|mail
 operator|.
-name|providers
+name|Mailer
 operator|.
-name|password
+name|Mail
 operator|.
-name|UsernamePasswordAuthUser
+name|Body
 import|;
 end_import
 
