@@ -296,7 +296,7 @@ name|Mailer
 operator|.
 name|SettingKeys
 operator|.
-name|SETTING_KEY_FROM_EMAIL
+name|FROM_EMAIL
 decl_stmt|;
 specifier|private
 specifier|static
@@ -308,7 +308,7 @@ name|Mailer
 operator|.
 name|SettingKeys
 operator|.
-name|SETTING_KEY_DELAY
+name|DELAY
 decl_stmt|;
 specifier|private
 specifier|static
@@ -320,7 +320,7 @@ name|Mailer
 operator|.
 name|SettingKeys
 operator|.
-name|SETTING_KEY_FROM
+name|FROM
 decl_stmt|;
 annotation|@
 name|Override
