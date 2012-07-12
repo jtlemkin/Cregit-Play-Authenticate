@@ -502,6 +502,8 @@ init|=
 name|buildSignupAuthUser
 argument_list|(
 name|signup
+argument_list|,
+name|context
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -598,6 +600,8 @@ init|=
 name|buildLoginAuthUser
 argument_list|(
 name|login
+argument_list|,
+name|context
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -1065,6 +1069,10 @@ parameter_list|(
 specifier|final
 name|L
 name|login
+parameter_list|,
+specifier|final
+name|Context
+name|ctx
 parameter_list|)
 function_decl|;
 specifier|protected
@@ -1075,6 +1083,10 @@ parameter_list|(
 specifier|final
 name|S
 name|signup
+parameter_list|,
+specifier|final
+name|Context
+name|ctx
 parameter_list|)
 function_decl|;
 specifier|protected

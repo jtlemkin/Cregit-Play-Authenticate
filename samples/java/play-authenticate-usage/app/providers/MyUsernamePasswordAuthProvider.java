@@ -862,6 +862,10 @@ parameter_list|(
 specifier|final
 name|MySignup
 name|signup
+parameter_list|,
+specifier|final
+name|Context
+name|ctx
 parameter_list|)
 block|{
 return|return
@@ -878,8 +882,13 @@ specifier|protected
 name|MyLoginUsernamePasswordAuthUser
 name|buildLoginAuthUser
 parameter_list|(
+specifier|final
 name|MyLogin
 name|login
+parameter_list|,
+specifier|final
+name|Context
+name|ctx
 parameter_list|)
 block|{
 return|return
