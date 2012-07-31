@@ -490,7 +490,7 @@ condition|(
 name|hasInfo
 condition|)
 block|{
-comment|// Siwtch to passing the UserInfo only, when the fix for:
+comment|// TODO: Switch to passing the UserInfo only, when the fix for:
 comment|// https://play.lighthouseapp.com/projects/82401-play-20/tickets/578-202-java-openid-userinfo-id-always-null
 comment|// has been incorporated.
 return|return
