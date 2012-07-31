@@ -113,24 +113,6 @@ name|pa
 operator|.
 name|user
 operator|.
-name|ExtendedIdentity
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|feth
-operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|pa
-operator|.
-name|user
-operator|.
 name|LocaleIdentity
 import|;
 end_import
@@ -153,24 +135,6 @@ name|PicturedIdentity
 import|;
 end_import
 
-begin_import
-import|import
-name|com
-operator|.
-name|feth
-operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|pa
-operator|.
-name|user
-operator|.
-name|ProfiledIdentity
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -178,11 +142,7 @@ name|TwitterAuthUser
 extends|extends
 name|BasicOAuth1AuthUser
 implements|implements
-name|ExtendedIdentity
-implements|,
 name|PicturedIdentity
-implements|,
-name|ProfiledIdentity
 implements|,
 name|LocaleIdentity
 block|{
@@ -201,6 +161,7 @@ specifier|abstract
 class|class
 name|Constants
 block|{
+comment|// {
 specifier|public
 specifier|static
 specifier|final
@@ -209,7 +170,26 @@ name|ID
 init|=
 literal|"id"
 decl_stmt|;
-comment|// "616473731"
+comment|// "id":15484335,
+comment|// "listed_count":5,
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROFILE_IMAGE_URL
+init|=
+literal|"profile_image_url"
+decl_stmt|;
+comment|// "profile_image_url":"http://a0.twimg.com/profile_images/57096786/j_48x48_normal.png",
+comment|// "following":false,
+comment|// "followers_count":118,
+comment|// "location":"Sydney, Australia",
+comment|// "contributors_enabled":false,
+comment|// "profile_background_color":"C0DEED",
+comment|// "time_zone":"Berlin",
+comment|// "geo_enabled":true,
+comment|// "utc_offset":3600,
+comment|// "is_translator":false,
 specifier|public
 specifier|static
 specifier|final
@@ -218,16 +198,25 @@ name|NAME
 init|=
 literal|"name"
 decl_stmt|;
-comment|// "Joscha Feth"
+comment|// "name":"Joscha Feth",
+comment|// "profile_background_image_url":"http://a0.twimg.com/images/themes/theme1/bg.png",
+comment|// "show_all_inline_media":false,
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|EMAIL
+name|SCREEN_NAME
 init|=
-literal|"email"
+literal|"screen_name"
 decl_stmt|;
-comment|// "joscha@feth.com"
+comment|// "screen_name":"joschafeth",
+comment|// "protected":false,
+comment|// "profile_link_color":"0084B4",
+comment|// "default_profile_image":false,
+comment|// "follow_request_sent":false,
+comment|// "profile_background_image_url_https":"https://si0.twimg.com/images/themes/theme1/bg.png",
+comment|// "favourites_count":3,
+comment|// "notifications":false,
 specifier|public
 specifier|static
 specifier|final
@@ -236,15 +225,49 @@ name|VERIFIED
 init|=
 literal|"verified"
 decl_stmt|;
-comment|// true
-specifier|private
+comment|// "verified":false,
+comment|// "profile_use_background_image":true,
+comment|// "profile_text_color":"333333",
+comment|// "description":"",
+comment|// "id_str":"15484335",
+specifier|public
 specifier|static
 specifier|final
 name|String
-name|PROFILE_IMAGE_URL
+name|LOCALE
 init|=
-literal|"profile_image_url"
+literal|"lang"
 decl_stmt|;
+comment|// "lang":"en",
+comment|// "profile_sidebar_border_color":"C0DEED",
+comment|// "profile_image_url_https":"https://si0.twimg.com/profile_images/57096786/j_48x48_normal.png",
+comment|// "default_profile":true,
+comment|// "url":null,
+comment|// "statuses_count":378,
+comment|// "status":{
+comment|// "in_reply_to_user_id":11111,
+comment|// "truncated":false,
+comment|// "created_at":"Mon Jul 23 13:22:31 +0000 2012",
+comment|// "coordinates":null,
+comment|// "geo":null,
+comment|// "favorited":false,
+comment|// "in_reply_to_screen_name":"XXX",
+comment|// "contributors":null,
+comment|// "in_reply_to_status_id_str":"111111",
+comment|// "place":null,
+comment|// "source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>",
+comment|// "in_reply_to_user_id_str":"11111",
+comment|// "id":111111,
+comment|// "id_str":"111111",
+comment|// "retweeted":false,
+comment|// "retweet_count":0,
+comment|// "in_reply_to_status_id":11111,
+comment|// "text":"some text to up to 140chars here"
+comment|// },
+comment|// "profile_background_tile":false,
+comment|// "friends_count":120,
+comment|// "created_at":"Fri Jul 18 18:17:46 +0000 2008",
+comment|// "profile_sidebar_fill_color":"DDEEF6"
 block|}
 specifier|private
 name|String
@@ -252,27 +275,7 @@ name|name
 decl_stmt|;
 specifier|private
 name|String
-name|firstName
-decl_stmt|;
-specifier|private
-name|String
-name|lastName
-decl_stmt|;
-specifier|private
-name|String
-name|link
-decl_stmt|;
-specifier|private
-name|String
-name|username
-decl_stmt|;
-specifier|private
-name|String
-name|gender
-decl_stmt|;
-specifier|private
-name|String
-name|email
+name|screenName
 decl_stmt|;
 specifier|private
 name|boolean
@@ -281,16 +284,8 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
-name|int
-name|timezone
-decl_stmt|;
-specifier|private
 name|String
 name|locale
-decl_stmt|;
-specifier|private
-name|String
-name|updateTime
 decl_stmt|;
 specifier|private
 name|String
@@ -364,13 +359,13 @@ name|has
 argument_list|(
 name|Constants
 operator|.
-name|EMAIL
+name|LOCALE
 argument_list|)
 condition|)
 block|{
 name|this
 operator|.
-name|email
+name|locale
 operator|=
 name|node
 operator|.
@@ -378,7 +373,36 @@ name|get
 argument_list|(
 name|Constants
 operator|.
-name|EMAIL
+name|LOCALE
+argument_list|)
+operator|.
+name|asText
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|node
+operator|.
+name|has
+argument_list|(
+name|Constants
+operator|.
+name|SCREEN_NAME
+argument_list|)
+condition|)
+block|{
+name|this
+operator|.
+name|screenName
+operator|=
+name|node
+operator|.
+name|get
+argument_list|(
+name|Constants
+operator|.
+name|SCREEN_NAME
 argument_list|)
 operator|.
 name|asText
@@ -470,56 +494,11 @@ return|;
 block|}
 specifier|public
 name|String
-name|getFirstName
+name|getScreenName
 parameter_list|()
 block|{
 return|return
-name|firstName
-return|;
-block|}
-specifier|public
-name|String
-name|getLastName
-parameter_list|()
-block|{
-return|return
-name|lastName
-return|;
-block|}
-specifier|public
-name|String
-name|getProfileLink
-parameter_list|()
-block|{
-return|return
-name|link
-return|;
-block|}
-specifier|public
-name|String
-name|getUsername
-parameter_list|()
-block|{
-return|return
-name|username
-return|;
-block|}
-specifier|public
-name|String
-name|getGender
-parameter_list|()
-block|{
-return|return
-name|gender
-return|;
-block|}
-specifier|public
-name|String
-name|getEmail
-parameter_list|()
-block|{
-return|return
-name|email
+name|screenName
 return|;
 block|}
 specifier|public
@@ -529,15 +508,6 @@ parameter_list|()
 block|{
 return|return
 name|verified
-return|;
-block|}
-specifier|public
-name|int
-name|getTimezone
-parameter_list|()
-block|{
-return|return
-name|timezone
 return|;
 block|}
 specifier|public
@@ -561,15 +531,6 @@ name|getLocaleFromString
 argument_list|(
 name|locale
 argument_list|)
-return|;
-block|}
-specifier|public
-name|String
-name|getUpdateTime
-parameter_list|()
-block|{
-return|return
-name|updateTime
 return|;
 block|}
 block|}
