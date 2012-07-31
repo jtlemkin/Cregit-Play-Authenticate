@@ -756,7 +756,7 @@ specifier|final
 name|String
 name|callbackURL
 init|=
-name|getAbsoluteUrl
+name|getRedirectUrl
 argument_list|(
 name|request
 argument_list|)
