@@ -93,11 +93,9 @@ name|module
 operator|.
 name|pa
 operator|.
-name|providers
+name|user
 operator|.
-name|oauth1
-operator|.
-name|OAuth1AuthUser
+name|AuthUser
 import|;
 end_import
 
@@ -557,7 +555,7 @@ name|getLocale
 parameter_list|()
 block|{
 return|return
-name|OAuth1AuthUser
+name|AuthUser
 operator|.
 name|getLocaleFromString
 argument_list|(

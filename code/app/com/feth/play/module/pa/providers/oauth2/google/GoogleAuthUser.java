@@ -73,11 +73,9 @@ name|module
 operator|.
 name|pa
 operator|.
-name|providers
+name|user
 operator|.
-name|oauth2
-operator|.
-name|OAuth2AuthUser
+name|AuthUser
 import|;
 end_import
 
@@ -700,7 +698,7 @@ name|getLocale
 parameter_list|()
 block|{
 return|return
-name|OAuth2AuthUser
+name|AuthUser
 operator|.
 name|getLocaleFromString
 argument_list|(
