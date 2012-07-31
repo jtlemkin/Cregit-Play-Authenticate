@@ -49,7 +49,25 @@ name|pa
 operator|.
 name|user
 operator|.
-name|BasicIdentity
+name|AuthUserIdentity
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|feth
+operator|.
+name|play
+operator|.
+name|module
+operator|.
+name|pa
+operator|.
+name|user
+operator|.
+name|NameIdentity
 import|;
 end_import
 
@@ -61,7 +79,9 @@ name|BasicOAuth1AuthUser
 extends|extends
 name|OAuth1AuthUser
 implements|implements
-name|BasicIdentity
+name|NameIdentity
+implements|,
+name|AuthUserIdentity
 block|{
 comment|/** 	 *  	 */
 specifier|private
