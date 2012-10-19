@@ -623,12 +623,9 @@ name|u
 init|=
 name|User
 operator|.
-name|findByEmail
+name|findByUsernamePasswordIdentity
 argument_list|(
 name|user
-operator|.
-name|getEmail
-argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
