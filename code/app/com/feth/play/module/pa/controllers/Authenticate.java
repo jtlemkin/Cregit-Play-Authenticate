@@ -49,6 +49,18 @@ end_import
 
 begin_import
 import|import
+name|play
+operator|.
+name|mvc
+operator|.
+name|Http
+operator|.
+name|Response
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|feth
@@ -88,6 +100,45 @@ name|String
 name|provider
 parameter_list|)
 block|{
+name|response
+argument_list|()
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|CACHE_CONTROL
+argument_list|,
+literal|"no-cache, no-store, must-revalidate"
+argument_list|)
+expr_stmt|;
+comment|// HTTP 1.1
+name|response
+argument_list|()
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|PRAGMA
+argument_list|,
+literal|"no-cache"
+argument_list|)
+expr_stmt|;
+comment|// HTTP 1.0.
+name|response
+argument_list|()
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|EXPIRES
+argument_list|,
+literal|"0"
+argument_list|)
+expr_stmt|;
+comment|// Proxies.
 specifier|final
 name|String
 name|payload
@@ -120,6 +171,45 @@ name|Result
 name|logout
 parameter_list|()
 block|{
+name|response
+argument_list|()
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|CACHE_CONTROL
+argument_list|,
+literal|"no-cache, no-store, must-revalidate"
+argument_list|)
+expr_stmt|;
+comment|// HTTP 1.1
+name|response
+argument_list|()
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|PRAGMA
+argument_list|,
+literal|"no-cache"
+argument_list|)
+expr_stmt|;
+comment|// HTTP 1.0.
+name|response
+argument_list|()
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|EXPIRES
+argument_list|,
+literal|"0"
+argument_list|)
+expr_stmt|;
+comment|// Proxies.
 return|return
 name|PlayAuthenticate
 operator|.

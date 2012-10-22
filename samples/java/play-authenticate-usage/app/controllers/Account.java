@@ -311,6 +311,11 @@ name|Result
 name|link
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 return|return
 name|ok
 argument_list|(
@@ -334,6 +339,11 @@ name|Result
 name|verifyEmail
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 specifier|final
 name|User
 name|user
@@ -468,6 +478,11 @@ name|Result
 name|changePassword
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 specifier|final
 name|User
 name|u
@@ -526,6 +541,11 @@ name|Result
 name|doChangePassword
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 specifier|final
 name|Form
 argument_list|<
@@ -634,6 +654,11 @@ name|Result
 name|askLink
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 specifier|final
 name|AuthUser
 name|u
@@ -688,6 +713,11 @@ name|Result
 name|doLink
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 specifier|final
 name|AuthUser
 name|u
@@ -810,6 +840,11 @@ name|Result
 name|askMerge
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 comment|// this is the currently logged in user
 specifier|final
 name|AuthUser
@@ -882,6 +917,11 @@ name|Result
 name|doMerge
 parameter_list|()
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 comment|// this is the currently logged in user
 specifier|final
 name|AuthUser

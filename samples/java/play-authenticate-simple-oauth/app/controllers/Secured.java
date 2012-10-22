@@ -137,6 +137,11 @@ name|Context
 name|ctx
 parameter_list|)
 block|{
+name|Application
+operator|.
+name|noCache
+argument_list|()
+expr_stmt|;
 name|ctx
 operator|.
 name|flash
