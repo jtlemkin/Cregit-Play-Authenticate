@@ -15,11 +15,33 @@ name|providers
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|AuthInfo
-block|{  }
+implements|implements
+name|Serializable
+block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

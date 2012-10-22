@@ -46,6 +46,15 @@ name|FoursquareAuthInfo
 extends|extends
 name|OAuth2AuthInfo
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|public
 name|FoursquareAuthInfo
 parameter_list|(

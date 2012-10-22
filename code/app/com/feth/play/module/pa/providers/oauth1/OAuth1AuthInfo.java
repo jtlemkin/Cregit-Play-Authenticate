@@ -42,6 +42,15 @@ name|OAuth1AuthInfo
 extends|extends
 name|AuthInfo
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|private
 name|String
 name|accessToken
