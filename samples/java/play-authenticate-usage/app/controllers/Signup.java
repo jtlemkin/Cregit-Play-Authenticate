@@ -213,7 +213,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -269,7 +269,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -345,7 +345,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -614,7 +614,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -691,7 +691,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -937,7 +937,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -975,7 +975,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1015,7 +1015,7 @@ name|Authenticate
 operator|.
 name|noCache
 argument_list|(
-name|result
+name|response
 argument_list|()
 argument_list|)
 expr_stmt|;
