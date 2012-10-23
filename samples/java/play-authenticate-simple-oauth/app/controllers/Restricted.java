@@ -75,11 +75,6 @@ name|Result
 name|index
 parameter_list|()
 block|{
-name|Application
-operator|.
-name|noCache
-argument_list|()
-expr_stmt|;
 specifier|final
 name|User
 name|localUser

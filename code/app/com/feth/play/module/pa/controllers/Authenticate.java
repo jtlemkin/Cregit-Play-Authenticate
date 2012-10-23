@@ -92,16 +92,15 @@ literal|"p"
 decl_stmt|;
 specifier|public
 specifier|static
-name|Result
-name|authenticate
+name|void
+name|noCache
 parameter_list|(
-specifier|final
-name|String
-name|provider
+name|Response
+name|response
 parameter_list|)
 block|{
+comment|// http://stackoverflow.com/questions/49547/making-sure-a-web-page-is-not-cached-across-all-browsers
 name|response
-argument_list|()
 operator|.
 name|setHeader
 argument_list|(
@@ -114,7 +113,6 @@ argument_list|)
 expr_stmt|;
 comment|// HTTP 1.1
 name|response
-argument_list|()
 operator|.
 name|setHeader
 argument_list|(
@@ -127,7 +125,6 @@ argument_list|)
 expr_stmt|;
 comment|// HTTP 1.0.
 name|response
-argument_list|()
 operator|.
 name|setHeader
 argument_list|(
@@ -139,6 +136,23 @@ literal|"0"
 argument_list|)
 expr_stmt|;
 comment|// Proxies.
+block|}
+specifier|public
+specifier|static
+name|Result
+name|authenticate
+parameter_list|(
+specifier|final
+name|String
+name|provider
+parameter_list|)
+block|{
+name|noCache
+argument_list|(
+name|response
+argument_list|()
+argument_list|)
+expr_stmt|;
 specifier|final
 name|String
 name|payload
@@ -171,45 +185,12 @@ name|Result
 name|logout
 parameter_list|()
 block|{
+name|noCache
+argument_list|(
 name|response
 argument_list|()
-operator|.
-name|setHeader
-argument_list|(
-name|Response
-operator|.
-name|CACHE_CONTROL
-argument_list|,
-literal|"no-cache, no-store, must-revalidate"
 argument_list|)
 expr_stmt|;
-comment|// HTTP 1.1
-name|response
-argument_list|()
-operator|.
-name|setHeader
-argument_list|(
-name|Response
-operator|.
-name|PRAGMA
-argument_list|,
-literal|"no-cache"
-argument_list|)
-expr_stmt|;
-comment|// HTTP 1.0.
-name|response
-argument_list|()
-operator|.
-name|setHeader
-argument_list|(
-name|Response
-operator|.
-name|EXPIRES
-argument_list|,
-literal|"0"
-argument_list|)
-expr_stmt|;
-comment|// Proxies.
 return|return
 name|PlayAuthenticate
 operator|.
