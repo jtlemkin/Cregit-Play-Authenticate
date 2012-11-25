@@ -382,7 +382,7 @@ name|Try
 argument_list|<
 name|Response
 argument_list|>
-name|either
+name|responseTry
 init|=
 name|resp
 operator|.
@@ -394,7 +394,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|either
+name|responseTry
 operator|.
 name|isFailure
 argument_list|()
@@ -404,7 +404,7 @@ specifier|final
 name|Throwable
 name|t
 init|=
-name|either
+name|responseTry
 operator|.
 name|failed
 argument_list|()
@@ -446,7 +446,7 @@ specifier|final
 name|JsValue
 name|json
 init|=
-name|either
+name|responseTry
 operator|.
 name|get
 argument_list|()
