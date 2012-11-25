@@ -185,6 +185,18 @@ name|*
 import|;
 end_import
 
+begin_import
+import|import static
+name|play
+operator|.
+name|data
+operator|.
+name|Form
+operator|.
+name|form
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
