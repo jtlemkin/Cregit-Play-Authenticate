@@ -1327,7 +1327,7 @@ name|companyName
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Gets the child node from a top node, by going going down the json tree 	 * via consuming '/'s. 	 * @param topNode 	 * @return 	 */
+comment|/** 	 * Gets the child node from a top node, by going going down the json tree 	 * via consuming '/'s. 	 *  	 * @param topNode 	 * @return 	 */
 specifier|private
 specifier|static
 name|JsonNode
