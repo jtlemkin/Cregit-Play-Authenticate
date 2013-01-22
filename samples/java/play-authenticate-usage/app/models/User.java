@@ -13,6 +13,8 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
+name|core
+operator|.
 name|models
 operator|.
 name|Permission
@@ -26,6 +28,8 @@ operator|.
 name|objectify
 operator|.
 name|deadbolt
+operator|.
+name|core
 operator|.
 name|models
 operator|.
@@ -41,9 +45,11 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
+name|core
+operator|.
 name|models
 operator|.
-name|RoleHolder
+name|Subject
 import|;
 end_import
 
@@ -251,7 +257,7 @@ name|User
 extends|extends
 name|Model
 implements|implements
-name|RoleHolder
+name|Subject
 block|{
 comment|/** 	 *  	 */
 specifier|private
@@ -364,6 +370,22 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getIdentifier
+parameter_list|()
+block|{
+return|return
+name|Long
+operator|.
+name|toString
+argument_list|(
+name|id
+argument_list|)
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public

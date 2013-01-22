@@ -41,6 +41,8 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
+name|java
+operator|.
 name|AbstractDeadboltHandler
 import|;
 end_import
@@ -52,6 +54,8 @@ operator|.
 name|objectify
 operator|.
 name|deadbolt
+operator|.
+name|java
 operator|.
 name|DynamicResourceHandler
 import|;
@@ -65,9 +69,11 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
+name|core
+operator|.
 name|models
 operator|.
-name|RoleHolder
+name|Subject
 import|;
 end_import
 
@@ -116,7 +122,7 @@ annotation|@
 name|Override
 specifier|public
 name|Result
-name|beforeRoleCheck
+name|beforeAuthCheck
 parameter_list|(
 specifier|final
 name|Http
@@ -194,8 +200,8 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|RoleHolder
-name|getRoleHolder
+name|Subject
+name|getSubject
 parameter_list|(
 specifier|final
 name|Http
@@ -246,7 +252,7 @@ annotation|@
 name|Override
 specifier|public
 name|Result
-name|onAccessFailure
+name|onAuthFailure
 parameter_list|(
 specifier|final
 name|Http
