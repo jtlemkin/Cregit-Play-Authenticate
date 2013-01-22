@@ -155,16 +155,6 @@ name|play
 operator|.
 name|mvc
 operator|.
-name|Controller
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|mvc
-operator|.
 name|Http
 operator|.
 name|Context
