@@ -49,6 +49,18 @@ end_import
 
 begin_import
 import|import
+name|play
+operator|.
+name|mvc
+operator|.
+name|Http
+operator|.
+name|Response
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|feth
@@ -80,6 +92,54 @@ literal|"p"
 decl_stmt|;
 specifier|public
 specifier|static
+name|void
+name|noCache
+parameter_list|(
+specifier|final
+name|Response
+name|response
+parameter_list|)
+block|{
+comment|// http://stackoverflow.com/questions/49547/making-sure-a-web-page-is-not-cached-across-all-browsers
+name|response
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|CACHE_CONTROL
+argument_list|,
+literal|"no-cache, no-store, must-revalidate"
+argument_list|)
+expr_stmt|;
+comment|// HTTP 1.1
+name|response
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|PRAGMA
+argument_list|,
+literal|"no-cache"
+argument_list|)
+expr_stmt|;
+comment|// HTTP 1.0.
+name|response
+operator|.
+name|setHeader
+argument_list|(
+name|Response
+operator|.
+name|EXPIRES
+argument_list|,
+literal|"0"
+argument_list|)
+expr_stmt|;
+comment|// Proxies.
+block|}
+specifier|public
+specifier|static
 name|Result
 name|authenticate
 parameter_list|(
@@ -88,6 +148,12 @@ name|String
 name|provider
 parameter_list|)
 block|{
+name|noCache
+argument_list|(
+name|response
+argument_list|()
+argument_list|)
+expr_stmt|;
 specifier|final
 name|String
 name|payload
@@ -120,6 +186,12 @@ name|Result
 name|logout
 parameter_list|()
 block|{
+name|noCache
+argument_list|(
+name|response
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|PlayAuthenticate
 operator|.

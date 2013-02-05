@@ -46,6 +46,15 @@ name|TwitterAuthInfo
 extends|extends
 name|OAuth1AuthInfo
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|public
 name|TwitterAuthInfo
 parameter_list|(
