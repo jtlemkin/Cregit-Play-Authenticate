@@ -49,6 +49,8 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
+name|core
+operator|.
 name|models
 operator|.
 name|Role
@@ -117,9 +119,11 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|String
-name|getRoleName
+name|getName
 parameter_list|()
 block|{
 return|return

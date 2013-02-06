@@ -45,6 +45,8 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
+name|core
+operator|.
 name|models
 operator|.
 name|Permission
