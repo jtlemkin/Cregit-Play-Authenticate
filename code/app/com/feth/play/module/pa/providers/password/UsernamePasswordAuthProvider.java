@@ -562,7 +562,12 @@ name|USER_CREATED
 case|:
 comment|// continue to login...
 return|return
+name|transformAuthUser
+argument_list|(
 name|authUser
+argument_list|,
+name|context
+argument_list|)
 return|;
 default|default:
 throw|throw
@@ -1073,6 +1078,21 @@ parameter_list|,
 specifier|final
 name|Context
 name|ctx
+parameter_list|)
+function_decl|;
+comment|/** 	 * This gets called when the user shall be logged in directly after signing up 	 *  	 * @param authUser 	 * @param context 	 * @return 	 */
+specifier|protected
+specifier|abstract
+name|UL
+name|transformAuthUser
+parameter_list|(
+specifier|final
+name|US
+name|authUser
+parameter_list|,
+specifier|final
+name|Context
+name|context
 parameter_list|)
 function_decl|;
 specifier|protected
