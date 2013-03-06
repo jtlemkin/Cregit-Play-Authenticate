@@ -361,6 +361,11 @@ name|result
 operator|.
 name|get
 argument_list|(
+name|ERROR
+argument_list|)
+operator|.
+name|get
+argument_list|(
 name|MESSAGE
 argument_list|)
 operator|.
