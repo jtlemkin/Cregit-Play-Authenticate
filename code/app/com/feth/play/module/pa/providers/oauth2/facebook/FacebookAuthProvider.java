@@ -229,6 +229,14 @@ name|MESSAGE
 init|=
 literal|"message"
 decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|ERROR
+init|=
+literal|"error"
+decl_stmt|;
 specifier|static
 specifier|final
 name|String
@@ -428,6 +436,11 @@ name|r
 operator|.
 name|asJson
 argument_list|()
+operator|.
+name|get
+argument_list|(
+name|ERROR
+argument_list|)
 operator|.
 name|get
 argument_list|(
