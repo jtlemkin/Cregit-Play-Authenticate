@@ -801,7 +801,7 @@ name|format
 argument_list|(
 literal|"https://graph.facebook.com/%s/picture"
 argument_list|,
-name|getUsername
+name|getId
 argument_list|()
 argument_list|)
 return|;
