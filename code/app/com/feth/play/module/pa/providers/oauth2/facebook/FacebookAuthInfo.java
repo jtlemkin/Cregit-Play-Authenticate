@@ -149,6 +149,17 @@ argument_list|)
 argument_list|)
 operator|*
 literal|1000
+argument_list|,
+name|m
+operator|.
+name|get
+argument_list|(
+name|OAuth2AuthProvider
+operator|.
+name|Constants
+operator|.
+name|REFRESH_TOKEN
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
