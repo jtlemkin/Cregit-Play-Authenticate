@@ -68,7 +68,7 @@ specifier|final
 name|long
 name|serialVersionUID
 init|=
-literal|1L
+literal|2L
 decl_stmt|;
 specifier|private
 name|String
@@ -77,6 +77,10 @@ decl_stmt|;
 specifier|private
 name|long
 name|expires
+decl_stmt|;
+specifier|private
+name|String
+name|refreshToken
 decl_stmt|;
 specifier|public
 name|OAuth2AuthInfo
@@ -88,6 +92,10 @@ parameter_list|,
 specifier|final
 name|long
 name|l
+parameter_list|,
+specifier|final
+name|String
+name|refresh
 parameter_list|)
 block|{
 name|accessToken
@@ -97,6 +105,10 @@ expr_stmt|;
 name|expires
 operator|=
 name|l
+expr_stmt|;
+name|refreshToken
+operator|=
+name|refresh
 expr_stmt|;
 block|}
 specifier|public
@@ -114,6 +126,8 @@ argument_list|,
 name|AuthUser
 operator|.
 name|NO_EXPIRATION
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -133,6 +147,15 @@ parameter_list|()
 block|{
 return|return
 name|expires
+return|;
+block|}
+specifier|public
+name|String
+name|getRefreshToken
+parameter_list|()
+block|{
+return|return
+name|refreshToken
 return|;
 block|}
 block|}
