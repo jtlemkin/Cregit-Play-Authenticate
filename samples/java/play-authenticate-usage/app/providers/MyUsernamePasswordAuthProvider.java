@@ -1523,8 +1523,6 @@ argument_list|,
 name|ctx
 argument_list|)
 decl_stmt|;
-name|mailer
-operator|.
 name|sendMail
 argument_list|(
 name|subject
@@ -1982,8 +1980,6 @@ argument_list|,
 name|ctx
 argument_list|)
 decl_stmt|;
-name|mailer
-operator|.
 name|sendMail
 argument_list|(
 name|subject
