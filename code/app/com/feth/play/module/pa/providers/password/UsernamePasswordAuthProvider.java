@@ -957,7 +957,7 @@ name|US
 name|user
 parameter_list|)
 function_decl|;
-specifier|private
+specifier|protected
 name|void
 name|sendVerifyEmailMailing
 parameter_list|(
