@@ -1035,8 +1035,6 @@ name|recipient
 parameter_list|)
 block|{
 return|return
-name|mailer
-operator|.
 name|sendMail
 argument_list|(
 operator|new
@@ -1053,6 +1051,25 @@ block|{
 name|recipient
 block|}
 argument_list|)
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Send a pre-assembled mail. 	 *  	 * @param mail 	 *            The mail to be sent. 	 * @return The {@link akka.actor.Cancellable} that can be used to cancel the 	 *         action. 	 */
+specifier|protected
+name|Cancellable
+name|sendMail
+parameter_list|(
+specifier|final
+name|Mail
+name|mail
+parameter_list|)
+block|{
+return|return
+name|mailer
+operator|.
+name|sendMail
+argument_list|(
+name|mail
 argument_list|)
 return|;
 block|}
