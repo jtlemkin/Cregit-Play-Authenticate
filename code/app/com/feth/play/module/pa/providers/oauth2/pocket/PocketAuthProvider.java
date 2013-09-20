@@ -63,7 +63,7 @@ name|client
 operator|.
 name|methods
 operator|.
-name|HttpGet
+name|HttpPost
 import|;
 end_import
 
@@ -736,11 +736,11 @@ name|c
 argument_list|)
 decl_stmt|;
 specifier|final
-name|HttpGet
+name|HttpPost
 name|m
 init|=
 operator|new
-name|HttpGet
+name|HttpPost
 argument_list|(
 name|c
 operator|.
