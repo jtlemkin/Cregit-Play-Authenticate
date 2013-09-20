@@ -2003,7 +2003,7 @@ name|Messages
 operator|.
 name|get
 argument_list|(
-literal|"playauthenticate.core.exception.singupuser_failed"
+literal|"playauthenticate.core.exception.signupuser_failed"
 argument_list|)
 argument_list|)
 throw|;
