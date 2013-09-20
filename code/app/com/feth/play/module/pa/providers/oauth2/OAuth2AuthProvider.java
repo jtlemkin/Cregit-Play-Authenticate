@@ -627,6 +627,14 @@ name|REDIRECT_URI_MISMATCH
 init|=
 literal|"redirect_uri_mismatch"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CONSUMER_KEY
+init|=
+literal|"consumer_key"
+decl_stmt|;
 block|}
 specifier|private
 name|String
