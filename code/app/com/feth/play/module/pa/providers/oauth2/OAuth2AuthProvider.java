@@ -635,6 +635,14 @@ name|CONSUMER_KEY
 init|=
 literal|"consumer_key"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|REQUEST_TOKEN
+init|=
+literal|"request_token"
+decl_stmt|;
 block|}
 specifier|private
 name|String
