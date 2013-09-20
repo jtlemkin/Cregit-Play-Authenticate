@@ -644,7 +644,7 @@ init|=
 literal|"request_token"
 decl_stmt|;
 block|}
-specifier|private
+specifier|protected
 name|String
 name|getAccessTokenParams
 parameter_list|(
