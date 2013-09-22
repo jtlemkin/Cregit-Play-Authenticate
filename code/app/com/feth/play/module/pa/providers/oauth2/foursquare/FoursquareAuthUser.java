@@ -73,11 +73,13 @@ end_import
 
 begin_import
 import|import
-name|org
+name|com
 operator|.
-name|codehaus
+name|fasterxml
 operator|.
 name|jackson
+operator|.
+name|databind
 operator|.
 name|JsonNode
 import|;
@@ -714,7 +716,7 @@ name|fieldIterator
 init|=
 name|contactNode
 operator|.
-name|getFields
+name|fields
 argument_list|()
 decl_stmt|;
 while|while
