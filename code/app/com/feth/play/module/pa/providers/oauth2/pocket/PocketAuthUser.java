@@ -35,43 +35,7 @@ name|providers
 operator|.
 name|oauth2
 operator|.
-name|BasicOAuth2AuthUser
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|feth
-operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|pa
-operator|.
-name|user
-operator|.
-name|EmailIdentity
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|feth
-operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|pa
-operator|.
-name|user
-operator|.
-name|FirstLastNameIdentity
+name|OAuth2AuthUser
 import|;
 end_import
 
@@ -80,11 +44,7 @@ specifier|public
 class|class
 name|PocketAuthUser
 extends|extends
-name|BasicOAuth2AuthUser
-implements|implements
-name|EmailIdentity
-implements|,
-name|FirstLastNameIdentity
+name|OAuth2AuthUser
 block|{
 comment|/** 	 *  	 */
 specifier|private
@@ -96,72 +56,8 @@ init|=
 literal|1L
 decl_stmt|;
 specifier|private
-specifier|static
-specifier|abstract
-class|class
-name|Constants
-block|{
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|ID
-init|=
-literal|"id"
-decl_stmt|;
-comment|// "616473731"
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|FIRST_NAME
-init|=
-literal|"first_name"
-decl_stmt|;
-comment|// "Joscha"
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LAST_NAME
-init|=
-literal|"last_name"
-decl_stmt|;
-comment|// "Feth"
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|USERNAME
-init|=
-literal|"username"
-decl_stmt|;
-comment|// "joscha.feth"
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|EMAIL
-init|=
-literal|"email"
-decl_stmt|;
-comment|// "joscha@feth.com"
-block|}
-specifier|private
-name|String
-name|firstName
-decl_stmt|;
-specifier|private
-name|String
-name|lastName
-decl_stmt|;
-specifier|private
 name|String
 name|username
-decl_stmt|;
-specifier|private
-name|String
-name|email
 decl_stmt|;
 specifier|public
 name|PocketAuthUser
@@ -187,12 +83,6 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
-comment|//		if (node.has(Constants.FIRST_NAME)) {
-comment|//			this.firstName = node.get(Constants.FIRST_NAME).asText();
-comment|//		}
-comment|//		if (node.has(Constants.LAST_NAME)) {
-comment|//			this.lastName = node.get(Constants.LAST_NAME).asText();
-comment|//		}
 name|this
 operator|.
 name|username
@@ -202,9 +92,6 @@ operator|.
 name|getUserName
 argument_list|()
 expr_stmt|;
-comment|//		if (node.has(Constants.EMAIL)) {
-comment|//			this.email = node.get(Constants.EMAIL).asText();
-comment|//		}
 block|}
 annotation|@
 name|Override
@@ -219,28 +106,6 @@ operator|.
 name|PROVIDER_KEY
 return|;
 block|}
-annotation|@
-name|Override
-specifier|public
-name|String
-name|getFirstName
-parameter_list|()
-block|{
-return|return
-name|firstName
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|String
-name|getLastName
-parameter_list|()
-block|{
-return|return
-name|lastName
-return|;
-block|}
 specifier|public
 name|String
 name|getUsername
@@ -248,28 +113,6 @@ parameter_list|()
 block|{
 return|return
 name|username
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|String
-name|getEmail
-parameter_list|()
-block|{
-return|return
-name|email
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|String
-name|getName
-parameter_list|()
-block|{
-return|return
-literal|null
 return|;
 block|}
 block|}
