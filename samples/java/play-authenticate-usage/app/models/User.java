@@ -81,20 +81,6 @@ begin_import
 import|import
 name|com
 operator|.
-name|avaje
-operator|.
-name|ebean
-operator|.
-name|validation
-operator|.
-name|Email
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
 name|feth
 operator|.
 name|play
@@ -227,6 +213,18 @@ begin_import
 import|import
 name|play
 operator|.
+name|data
+operator|.
+name|validation
+operator|.
+name|Constraints
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
 name|db
 operator|.
 name|ebean
@@ -293,6 +291,8 @@ name|Long
 name|id
 decl_stmt|;
 annotation|@
+name|Constraints
+operator|.
 name|Email
 comment|// if you make this unique, keep in mind that users *must* merge/link their
 comment|// accounts then on signup with additional providers
