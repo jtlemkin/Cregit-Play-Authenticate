@@ -419,12 +419,10 @@ specifier|final
 name|String
 name|error
 init|=
-name|Authenticate
+name|request
 operator|.
 name|getQueryString
 argument_list|(
-name|request
-argument_list|,
 name|Constants
 operator|.
 name|OAUTH_PROBLEM

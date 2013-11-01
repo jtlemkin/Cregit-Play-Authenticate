@@ -443,12 +443,10 @@ specifier|final
 name|String
 name|error
 init|=
-name|Authenticate
+name|request
 operator|.
 name|getQueryString
 argument_list|(
-name|request
-argument_list|,
 name|XING_ERROR
 argument_list|)
 decl_stmt|;
