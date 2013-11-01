@@ -114,10 +114,6 @@ specifier|public
 name|OpenIdAuthUser
 parameter_list|(
 specifier|final
-name|String
-name|id
-parameter_list|,
-specifier|final
 name|UserInfo
 name|u
 parameter_list|)
@@ -126,6 +122,8 @@ name|this
 operator|.
 name|id
 operator|=
+name|u
+operator|.
 name|id
 expr_stmt|;
 name|attributes
