@@ -280,7 +280,9 @@ name|SettingKeys
 operator|.
 name|TIMEOUT
 argument_list|,
-literal|10000L
+name|PlayAuthenticate
+operator|.
+name|TIMEOUT
 argument_list|)
 return|;
 block|}

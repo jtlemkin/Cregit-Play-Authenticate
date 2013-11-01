@@ -793,9 +793,8 @@ argument_list|)
 operator|.
 name|get
 argument_list|(
-name|PlayAuthenticate
-operator|.
-name|TIMEOUT
+name|getTimeout
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

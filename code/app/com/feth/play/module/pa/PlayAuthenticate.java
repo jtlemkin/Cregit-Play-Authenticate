@@ -456,7 +456,7 @@ block|}
 specifier|public
 specifier|static
 specifier|final
-name|Long
+name|long
 name|TIMEOUT
 init|=
 literal|10l

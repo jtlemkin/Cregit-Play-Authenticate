@@ -1392,7 +1392,7 @@ operator|.
 name|ERROR
 return|;
 block|}
-comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementaion 	 * 	 * @param info 	 * @param state 	 * @return 	 * @throws AuthException 	 */
+comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementation 	 * 	 * @param info 	 * @param state 	 * @return 	 * @throws AuthException 	 */
 specifier|protected
 specifier|abstract
 name|AuthUserIdentity
