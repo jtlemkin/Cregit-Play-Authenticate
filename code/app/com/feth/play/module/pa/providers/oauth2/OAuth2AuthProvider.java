@@ -1325,7 +1325,6 @@ argument_list|,
 name|state
 argument_list|)
 return|;
-comment|// System.out.println(accessToken.getAccessToken());
 block|}
 else|else
 block|{

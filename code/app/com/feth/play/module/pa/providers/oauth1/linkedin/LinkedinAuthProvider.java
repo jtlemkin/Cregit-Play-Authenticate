@@ -380,7 +380,7 @@ name|buildInfo
 parameter_list|(
 specifier|final
 name|RequestToken
-name|rtoken
+name|requestToken
 parameter_list|)
 throws|throws
 name|AccessTokenException
@@ -389,12 +389,12 @@ return|return
 operator|new
 name|LinkedinAuthInfo
 argument_list|(
-name|rtoken
+name|requestToken
 operator|.
 name|token
 argument_list|()
 argument_list|,
-name|rtoken
+name|requestToken
 operator|.
 name|secret
 argument_list|()
