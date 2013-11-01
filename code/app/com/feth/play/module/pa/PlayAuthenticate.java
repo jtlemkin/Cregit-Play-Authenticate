@@ -1318,24 +1318,17 @@ argument_list|,
 name|key
 argument_list|)
 decl_stmt|;
-comment|// TODO change on Play 2.1
 name|play
 operator|.
 name|cache
 operator|.
 name|Cache
 operator|.
-name|set
+name|remove
 argument_list|(
 name|k
-argument_list|,
-literal|null
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-comment|// POST-2.0/
-comment|// play.cache.Cache.remove(k);
 return|return
 name|o
 return|;
