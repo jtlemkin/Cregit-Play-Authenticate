@@ -982,7 +982,7 @@ name|OAuthException
 argument_list|,
 name|RequestToken
 argument_list|>
-name|reponse
+name|response
 init|=
 name|service
 operator|.
@@ -993,7 +993,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|reponse
+name|response
 operator|.
 name|isLeft
 argument_list|()
@@ -1004,7 +1004,7 @@ throw|throw
 operator|new
 name|AuthException
 argument_list|(
-name|reponse
+name|response
 operator|.
 name|left
 argument_list|()
@@ -1024,7 +1024,7 @@ specifier|final
 name|RequestToken
 name|rtoken
 init|=
-name|reponse
+name|response
 operator|.
 name|right
 argument_list|()
@@ -1230,10 +1230,7 @@ name|CONSUMER_SECRET
 argument_list|)
 argument_list|)
 decl_stmt|;
-specifier|final
-name|OAuthCalculator
-name|op
-init|=
+return|return
 operator|new
 name|OAuthCalculator
 argument_list|(
@@ -1241,12 +1238,9 @@ name|cK
 argument_list|,
 name|token
 argument_list|)
-decl_stmt|;
-return|return
-name|op
 return|;
 block|}
-comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementation 	 *  	 * @param i 	 * @param state 	 * @return 	 * @throws AuthException 	 */
+comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementation 	 * 	 * @return 	 * @throws AuthException 	 */
 specifier|protected
 specifier|abstract
 name|U

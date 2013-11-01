@@ -86,7 +86,7 @@ name|OpenIdAuthUser
 extends|extends
 name|AuthUser
 block|{
-comment|/** 	 *  	 */
+comment|/** 	 * 	 */
 specifier|private
 specifier|static
 specifier|final

@@ -1323,19 +1323,13 @@ argument_list|,
 name|request
 argument_list|)
 decl_stmt|;
-specifier|final
-name|AuthUserIdentity
-name|u
-init|=
+return|return
 name|transform
 argument_list|(
 name|info
 argument_list|,
 name|state
 argument_list|)
-decl_stmt|;
-return|return
-name|u
 return|;
 comment|// System.out.println(accessToken.getAccessToken());
 block|}
@@ -1404,7 +1398,7 @@ operator|.
 name|ERROR
 return|;
 block|}
-comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementaion 	 *  	 * @param info 	 * @param state 	 * @return 	 * @throws AuthException 	 */
+comment|/** 	 * This allows custom implementations to enrich an AuthUser object or 	 * provide their own implementaion 	 * 	 * @param info 	 * @param state 	 * @return 	 * @throws AuthException 	 */
 specifier|protected
 specifier|abstract
 name|AuthUserIdentity
