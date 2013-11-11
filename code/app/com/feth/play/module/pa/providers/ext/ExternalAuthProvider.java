@@ -311,6 +311,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// only for backwards compatibility
 name|secure
 operator|=
 name|getConfiguration
@@ -324,23 +325,15 @@ name|SECURE_REDIRECT_URI
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|secure
-operator|==
-literal|null
-condition|)
-block|{
 return|return
+name|secure
+operator|!=
+literal|null
+condition|?
+name|secure
+else|:
 literal|false
 return|;
-block|}
-else|else
-block|{
-return|return
-name|secure
-return|;
-block|}
 block|}
 specifier|protected
 name|String
