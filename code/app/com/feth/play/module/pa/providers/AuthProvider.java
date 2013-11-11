@@ -95,6 +95,18 @@ name|mvc
 operator|.
 name|Http
 operator|.
+name|Session
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|mvc
+operator|.
+name|Http
+operator|.
 name|Context
 import|;
 end_import
@@ -624,6 +636,24 @@ name|boolean
 name|isExternal
 parameter_list|()
 function_decl|;
+comment|/**      * This gets called after a successful 'save' operation of the UserService.      *      * @param user The user object      * @param identity The user identity returned fro, the save operation in the UserService      * @param session The session      */
+specifier|public
+name|void
+name|afterSave
+parameter_list|(
+specifier|final
+name|AuthUser
+name|user
+parameter_list|,
+specifier|final
+name|Object
+name|identity
+parameter_list|,
+specifier|final
+name|Session
+name|session
+parameter_list|)
+block|{      }
 block|}
 end_class
 
