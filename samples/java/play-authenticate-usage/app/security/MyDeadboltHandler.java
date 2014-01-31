@@ -161,7 +161,14 @@ condition|)
 block|{
 comment|// user is logged in
 return|return
+name|F
+operator|.
+name|Promise
+operator|.
+name|pure
+argument_list|(
 literal|null
+argument_list|)
 return|;
 block|}
 else|else
