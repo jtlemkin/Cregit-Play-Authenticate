@@ -21,20 +21,6 @@ end_package
 
 begin_import
 import|import
-name|com
-operator|.
-name|fasterxml
-operator|.
-name|jackson
-operator|.
-name|databind
-operator|.
-name|JsonNode
-import|;
-end_import
-
-begin_import
-import|import
 name|play
 operator|.
 name|Application
@@ -75,15 +61,13 @@ begin_import
 import|import
 name|com
 operator|.
-name|feth
+name|fasterxml
 operator|.
-name|play
+name|jackson
 operator|.
-name|module
+name|databind
 operator|.
-name|pa
-operator|.
-name|PlayAuthenticate
+name|JsonNode
 import|;
 end_import
 
