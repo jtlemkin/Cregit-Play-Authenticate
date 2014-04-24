@@ -149,6 +149,8 @@ name|play
 operator|.
 name|libs
 operator|.
+name|ws
+operator|.
 name|WS
 import|;
 end_import
@@ -159,9 +161,21 @@ name|play
 operator|.
 name|libs
 operator|.
-name|WS
+name|ws
 operator|.
-name|Response
+name|WSResponse
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|libs
+operator|.
+name|ws
+operator|.
+name|WSRequestHolder
 import|;
 end_import
 
@@ -846,12 +860,6 @@ name|ACCESS_TOKEN_URL
 argument_list|)
 decl_stmt|;
 specifier|final
-name|play
-operator|.
-name|libs
-operator|.
-name|WS
-operator|.
 name|WSRequestHolder
 name|wrh
 init|=
@@ -908,7 +916,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|final
-name|Response
+name|WSResponse
 name|r
 init|=
 name|wrh
@@ -938,7 +946,7 @@ name|I
 name|buildInfo
 parameter_list|(
 specifier|final
-name|Response
+name|WSResponse
 name|r
 parameter_list|)
 throws|throws

@@ -41,7 +41,21 @@ name|play
 operator|.
 name|libs
 operator|.
+name|ws
+operator|.
 name|WS
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|libs
+operator|.
+name|ws
+operator|.
+name|WSResponse
 import|;
 end_import
 
@@ -233,9 +247,7 @@ name|USER_INFO_FIELDS_SETTING_KEY
 argument_list|)
 decl_stmt|;
 specifier|final
-name|WS
-operator|.
-name|Response
+name|WSResponse
 name|r
 init|=
 name|WS
@@ -359,9 +371,7 @@ name|VkAuthInfo
 name|buildInfo
 parameter_list|(
 specifier|final
-name|WS
-operator|.
-name|Response
+name|WSResponse
 name|r
 parameter_list|)
 throws|throws
