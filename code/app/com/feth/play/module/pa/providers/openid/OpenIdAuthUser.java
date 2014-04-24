@@ -33,6 +33,8 @@ name|play
 operator|.
 name|libs
 operator|.
+name|openid
+operator|.
 name|OpenID
 operator|.
 name|UserInfo
