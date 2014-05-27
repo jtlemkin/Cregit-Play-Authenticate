@@ -99,6 +99,8 @@ name|play
 operator|.
 name|libs
 operator|.
+name|ws
+operator|.
 name|WS
 import|;
 end_import
@@ -109,9 +111,9 @@ name|play
 operator|.
 name|libs
 operator|.
-name|WS
+name|ws
 operator|.
-name|Response
+name|WSResponse
 import|;
 end_import
 
@@ -321,7 +323,7 @@ name|USER_INFO_URL_SETTING_KEY
 argument_list|)
 decl_stmt|;
 specifier|final
-name|Response
+name|WSResponse
 name|r
 init|=
 name|WS
@@ -493,7 +495,7 @@ name|ACCESS_TOKEN_URL
 argument_list|)
 decl_stmt|;
 specifier|final
-name|Response
+name|WSResponse
 name|r
 init|=
 name|WS
@@ -650,7 +652,7 @@ name|UntappdAuthInfo
 name|buildInfo
 parameter_list|(
 specifier|final
-name|Response
+name|WSResponse
 name|r
 parameter_list|)
 throws|throws

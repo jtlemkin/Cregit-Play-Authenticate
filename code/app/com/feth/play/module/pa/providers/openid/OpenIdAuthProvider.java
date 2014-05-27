@@ -103,6 +103,8 @@ name|play
 operator|.
 name|libs
 operator|.
+name|openid
+operator|.
 name|OpenID
 import|;
 end_import
@@ -112,6 +114,8 @@ import|import
 name|play
 operator|.
 name|libs
+operator|.
+name|openid
 operator|.
 name|OpenID
 operator|.
@@ -557,7 +561,10 @@ return|return
 name|pr
 operator|.
 name|get
+argument_list|(
+name|getTimeout
 argument_list|()
+argument_list|)
 return|;
 block|}
 catch|catch
