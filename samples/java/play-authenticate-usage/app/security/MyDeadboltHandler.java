@@ -39,7 +39,7 @@ name|play
 operator|.
 name|mvc
 operator|.
-name|SimpleResult
+name|Result
 import|;
 end_import
 
@@ -135,7 +135,7 @@ name|F
 operator|.
 name|Promise
 argument_list|<
-name|SimpleResult
+name|Result
 argument_list|>
 name|beforeAuthCheck
 parameter_list|(
@@ -217,14 +217,14 @@ name|F
 operator|.
 name|Function0
 argument_list|<
-name|SimpleResult
+name|Result
 argument_list|>
 argument_list|()
 block|{
 annotation|@
 name|Override
 specifier|public
-name|SimpleResult
+name|Result
 name|apply
 parameter_list|()
 throws|throws
@@ -306,7 +306,7 @@ name|F
 operator|.
 name|Promise
 argument_list|<
-name|SimpleResult
+name|Result
 argument_list|>
 name|onAuthFailure
 parameter_list|(
@@ -336,14 +336,14 @@ name|F
 operator|.
 name|Function0
 argument_list|<
-name|SimpleResult
+name|Result
 argument_list|>
 argument_list|()
 block|{
 annotation|@
 name|Override
 specifier|public
-name|SimpleResult
+name|Result
 name|apply
 parameter_list|()
 throws|throws
