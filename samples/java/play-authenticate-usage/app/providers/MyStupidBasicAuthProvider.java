@@ -21,7 +21,9 @@ begin_import
 import|import
 name|play
 operator|.
-name|mvc
+name|twirl
+operator|.
+name|api
 operator|.
 name|Content
 import|;
