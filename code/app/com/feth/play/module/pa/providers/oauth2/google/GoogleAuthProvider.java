@@ -141,6 +141,7 @@ argument_list|,
 name|GoogleAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String
