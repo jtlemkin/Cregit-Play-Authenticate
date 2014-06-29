@@ -124,11 +124,38 @@ name|hasUserService
 argument_list|()
 condition|)
 block|{
+specifier|final
+name|String
+name|oldServiceClass
+init|=
+name|PlayAuthenticate
+operator|.
+name|getUserService
+argument_list|()
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+decl_stmt|;
 name|Logger
 operator|.
 name|warn
 argument_list|(
-literal|"A user service was already registered - replacing the old one, "
+literal|"A user service was already registered - replacing the old one ("
+operator|+
+name|oldServiceClass
+operator|+
+literal|") with the new one ("
+operator|+
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"), "
 operator|+
 literal|"however this might hint to a configuration problem if this is a production environment."
 argument_list|)
