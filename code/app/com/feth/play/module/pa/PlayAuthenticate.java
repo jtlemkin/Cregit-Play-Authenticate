@@ -199,7 +199,7 @@ specifier|abstract
 class|class
 name|PlayAuthenticate
 block|{
-specifier|private
+specifier|public
 specifier|static
 specifier|final
 name|String
