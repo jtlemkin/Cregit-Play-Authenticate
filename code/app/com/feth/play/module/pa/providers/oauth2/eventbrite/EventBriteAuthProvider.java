@@ -145,6 +145,7 @@ argument_list|,
 name|EventBriteAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String
