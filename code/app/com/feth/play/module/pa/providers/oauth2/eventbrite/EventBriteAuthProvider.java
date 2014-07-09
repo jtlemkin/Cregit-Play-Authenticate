@@ -21,46 +21,6 @@ end_package
 
 begin_import
 import|import
-name|play
-operator|.
-name|Application
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|Logger
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|libs
-operator|.
-name|ws
-operator|.
-name|WSResponse
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|libs
-operator|.
-name|ws
-operator|.
-name|*
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|fasterxml
@@ -129,6 +89,34 @@ name|OAuth2AuthProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|play
+operator|.
+name|Application
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|libs
+operator|.
+name|ws
+operator|.
+name|WSResponse
+import|;
+end_import
+
 begin_comment
 comment|/**  * Auth provider for Eventbrite https://www.eventbrite.com  */
 end_comment
@@ -181,7 +169,6 @@ argument_list|(
 name|app
 argument_list|)
 expr_stmt|;
-comment|// TODO Auto-generated constructor stub
 block|}
 annotation|@
 name|Override
@@ -314,7 +301,6 @@ name|String
 name|getKey
 parameter_list|()
 block|{
-comment|// TODO Auto-generated method stub
 return|return
 name|PROVIDER_KEY
 return|;
