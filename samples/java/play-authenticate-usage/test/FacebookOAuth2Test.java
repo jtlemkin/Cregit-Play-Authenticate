@@ -505,6 +505,10 @@ operator|.
 name|isLoaded
 argument_list|()
 expr_stmt|;
+comment|// check login layout
+name|checkLoginLayout
+argument_list|()
+expr_stmt|;
 comment|// confirm login
 name|browser
 operator|.
@@ -526,6 +530,30 @@ argument_list|()
 operator|.
 name|isLoaded
 argument_list|()
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|checkLoginLayout
+parameter_list|()
+block|{
+name|assertThat
+argument_list|(
+name|browser
+operator|.
+name|find
+argument_list|(
+literal|"[name='display']"
+argument_list|)
+operator|.
+name|getValue
+argument_list|()
+argument_list|)
+operator|.
+name|isEqualTo
+argument_list|(
+literal|"page"
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * After the test is finished, revoke the permission to the app so the login dialog appears again on the next login when running the test      * See https://developers.facebook.com/docs/facebook-login/permissions/v2.1#revokelogin      */
