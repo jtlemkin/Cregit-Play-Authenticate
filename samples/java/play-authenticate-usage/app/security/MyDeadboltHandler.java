@@ -251,7 +251,12 @@ block|}
 annotation|@
 name|Override
 specifier|public
+name|F
+operator|.
+name|Promise
+argument_list|<
 name|Subject
+argument_list|>
 name|getSubject
 parameter_list|(
 specifier|final
@@ -274,11 +279,18 @@ argument_list|)
 decl_stmt|;
 comment|// Caching might be a good idea here
 return|return
+name|F
+operator|.
+name|Promise
+operator|.
+name|pure
+argument_list|(
 name|User
 operator|.
 name|findByAuthUserIdentity
 argument_list|(
 name|u
+argument_list|)
 argument_list|)
 return|;
 block|}
