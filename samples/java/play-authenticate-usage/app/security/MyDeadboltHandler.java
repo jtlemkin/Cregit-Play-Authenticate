@@ -285,6 +285,9 @@ name|Promise
 operator|.
 name|pure
 argument_list|(
+operator|(
+name|Subject
+operator|)
 name|User
 operator|.
 name|findByAuthUserIdentity
