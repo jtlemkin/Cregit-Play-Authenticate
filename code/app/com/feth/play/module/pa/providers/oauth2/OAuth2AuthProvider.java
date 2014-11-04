@@ -1419,7 +1419,14 @@ literal|"Cache either timed out, or you are using a setup with multiple servers 
 argument_list|)
 expr_stmt|;
 comment|// we will just behave as if there was no auth, yet...
-comment|//return generateRedirectUrl(context, request);
+return|return
+name|generateRedirectUrl
+argument_list|(
+name|context
+argument_list|,
+name|request
+argument_list|)
+return|;
 block|}
 specifier|final
 name|String
