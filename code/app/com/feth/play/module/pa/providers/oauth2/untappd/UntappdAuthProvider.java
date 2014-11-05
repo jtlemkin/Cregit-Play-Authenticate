@@ -31,6 +31,24 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|feth
+operator|.
+name|play
+operator|.
+name|module
+operator|.
+name|pa
+operator|.
+name|exceptions
+operator|.
+name|ResolverMissingException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -473,6 +491,8 @@ name|request
 parameter_list|)
 throws|throws
 name|AccessTokenException
+throws|,
+name|ResolverMissingException
 block|{
 specifier|final
 name|Configuration
@@ -602,6 +622,8 @@ specifier|final
 name|Configuration
 name|c
 parameter_list|)
+throws|throws
+name|ResolverMissingException
 block|{
 specifier|final
 name|List
