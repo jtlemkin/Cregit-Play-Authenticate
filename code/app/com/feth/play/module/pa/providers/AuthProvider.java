@@ -486,6 +486,18 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
+name|Logger
+operator|.
+name|debug
+argument_list|(
+literal|"Registered AuthProvider '"
+operator|+
+name|getKey
+argument_list|()
+operator|+
+literal|"'"
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Override
