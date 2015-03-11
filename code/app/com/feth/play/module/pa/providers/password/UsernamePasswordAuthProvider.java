@@ -280,7 +280,7 @@ parameter_list|>
 extends|extends
 name|AuthProvider
 block|{
-specifier|protected
+specifier|public
 specifier|static
 specifier|final
 name|String

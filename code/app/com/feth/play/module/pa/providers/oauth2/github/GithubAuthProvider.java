@@ -153,6 +153,7 @@ argument_list|,
 name|GithubAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String

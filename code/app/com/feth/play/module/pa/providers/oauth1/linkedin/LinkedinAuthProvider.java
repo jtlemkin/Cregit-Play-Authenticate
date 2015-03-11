@@ -175,6 +175,7 @@ argument_list|,
 name|LinkedinAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String
