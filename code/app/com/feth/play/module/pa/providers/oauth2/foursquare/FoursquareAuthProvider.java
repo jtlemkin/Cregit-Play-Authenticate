@@ -159,6 +159,7 @@ argument_list|,
 name|FoursquareAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String

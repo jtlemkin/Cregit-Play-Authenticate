@@ -179,6 +179,7 @@ argument_list|,
 name|XingAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String

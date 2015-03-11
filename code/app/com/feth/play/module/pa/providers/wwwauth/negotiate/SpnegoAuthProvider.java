@@ -281,6 +281,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
 specifier|final
 specifier|static
 name|String

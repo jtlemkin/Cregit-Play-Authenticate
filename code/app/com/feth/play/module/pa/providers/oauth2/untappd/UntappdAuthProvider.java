@@ -219,6 +219,7 @@ argument_list|,
 name|UntappdAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String

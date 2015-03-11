@@ -307,6 +307,7 @@ argument_list|,
 name|PocketAuthInfo
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String
