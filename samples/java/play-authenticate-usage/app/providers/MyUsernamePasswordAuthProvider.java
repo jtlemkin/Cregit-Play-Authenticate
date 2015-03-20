@@ -83,6 +83,18 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
 name|controllers
 operator|.
 name|routes
@@ -617,6 +629,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|MyUsernamePasswordAuthProvider
 parameter_list|(

@@ -227,6 +227,18 @@ name|AuthUser
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -310,6 +322,8 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|TestUsernamePasswordAuthProvider
 parameter_list|(

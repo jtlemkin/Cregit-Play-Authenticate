@@ -163,6 +163,18 @@ name|OAuth1AuthProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_comment
 comment|/**  * Auth provider for business social network<a  * href="https://www.xing.com/">XING</a>.  */
 end_comment
@@ -219,6 +231,8 @@ name|ACCESS_DENIED
 init|=
 literal|"user_abort"
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|XingAuthProvider
 parameter_list|(

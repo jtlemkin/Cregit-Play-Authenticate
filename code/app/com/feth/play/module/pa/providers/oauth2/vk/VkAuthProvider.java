@@ -129,6 +129,18 @@ name|OAuth2AuthProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Denis Borisenko  */
 end_comment
@@ -193,6 +205,8 @@ name|BODY_RESPONSE_KEY
 init|=
 literal|"response"
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|VkAuthProvider
 parameter_list|(

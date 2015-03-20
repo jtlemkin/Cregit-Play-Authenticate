@@ -103,6 +103,18 @@ name|AuthUserIdentity
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -129,6 +141,8 @@ name|AuthUser
 argument_list|>
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|TestUserServicePlugin
 parameter_list|(

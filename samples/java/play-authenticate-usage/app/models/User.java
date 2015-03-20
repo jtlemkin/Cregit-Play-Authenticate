@@ -223,18 +223,6 @@ end_import
 
 begin_import
 import|import
-name|play
-operator|.
-name|db
-operator|.
-name|ebean
-operator|.
-name|Model
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|persistence
@@ -271,7 +259,7 @@ specifier|public
 class|class
 name|User
 extends|extends
-name|Model
+name|AppModel
 implements|implements
 name|Subject
 block|{
@@ -371,6 +359,8 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
+name|AppModel
+operator|.
 name|Finder
 argument_list|<
 name|Long
@@ -380,6 +370,8 @@ argument_list|>
 name|find
 init|=
 operator|new
+name|AppModel
+operator|.
 name|Finder
 argument_list|<
 name|Long
@@ -408,6 +400,8 @@ name|Long
 operator|.
 name|toString
 argument_list|(
+name|this
+operator|.
 name|id
 argument_list|)
 return|;
@@ -425,6 +419,8 @@ name|getRoles
 parameter_list|()
 block|{
 return|return
+name|this
+operator|.
 name|roles
 return|;
 block|}
@@ -441,6 +437,8 @@ name|getPermissions
 parameter_list|()
 block|{
 return|return
+name|this
+operator|.
 name|permissions
 return|;
 block|}
@@ -925,13 +923,7 @@ operator|.
 name|save
 argument_list|()
 expr_stmt|;
-name|user
-operator|.
-name|saveManyToManyAssociations
-argument_list|(
-literal|"roles"
-argument_list|)
-expr_stmt|;
+comment|// user.saveManyToManyAssociations("roles");
 comment|// user.saveManyToManyAssociations("permissions");
 return|return
 name|user
@@ -990,6 +982,8 @@ argument_list|<
 name|String
 argument_list|>
 argument_list|(
+name|this
+operator|.
 name|linkedAccounts
 operator|.
 name|size
@@ -1002,6 +996,8 @@ specifier|final
 name|LinkedAccount
 name|acc
 range|:
+name|this
+operator|.
 name|linkedAccounts
 control|)
 block|{

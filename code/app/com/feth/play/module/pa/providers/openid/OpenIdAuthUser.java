@@ -35,8 +35,6 @@ name|libs
 operator|.
 name|openid
 operator|.
-name|OpenID
-operator|.
 name|UserInfo
 import|;
 end_import
@@ -127,12 +125,14 @@ operator|=
 name|u
 operator|.
 name|id
+argument_list|()
 expr_stmt|;
 name|attributes
 operator|=
 name|u
 operator|.
 name|attributes
+argument_list|()
 expr_stmt|;
 block|}
 annotation|@

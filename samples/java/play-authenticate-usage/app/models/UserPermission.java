@@ -27,18 +27,6 @@ end_import
 
 begin_import
 import|import
-name|play
-operator|.
-name|db
-operator|.
-name|ebean
-operator|.
-name|Model
-import|;
-end_import
-
-begin_import
-import|import
 name|be
 operator|.
 name|objectify
@@ -64,7 +52,7 @@ specifier|public
 class|class
 name|UserPermission
 extends|extends
-name|Model
+name|AppModel
 implements|implements
 name|Permission
 block|{
@@ -90,7 +78,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
-name|Model
+name|AppModel
 operator|.
 name|Finder
 argument_list|<
@@ -101,7 +89,7 @@ argument_list|>
 name|find
 init|=
 operator|new
-name|Model
+name|AppModel
 operator|.
 name|Finder
 argument_list|<

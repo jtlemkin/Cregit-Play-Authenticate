@@ -117,8 +117,6 @@ name|libs
 operator|.
 name|openid
 operator|.
-name|OpenID
-operator|.
 name|UserInfo
 import|;
 end_import
@@ -229,6 +227,18 @@ name|OpenIdConnectException
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -274,6 +284,8 @@ init|=
 literal|"optional"
 decl_stmt|;
 block|}
+annotation|@
+name|Inject
 specifier|public
 name|OpenIdAuthProvider
 parameter_list|(
