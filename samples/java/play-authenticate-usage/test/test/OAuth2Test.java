@@ -61,6 +61,18 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|junit
@@ -430,6 +442,8 @@ specifier|static
 name|AuthUser
 name|lastAuthUser
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|MyTestUserServicePlugin
 parameter_list|(
