@@ -193,17 +193,7 @@ name|libs
 operator|.
 name|ws
 operator|.
-name|WSRequestHolder
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|mvc
-operator|.
-name|Http
+name|WSRequest
 import|;
 end_import
 
@@ -820,7 +810,7 @@ name|ACCESS_TOKEN_URL
 argument_list|)
 decl_stmt|;
 specifier|final
-name|WSRequestHolder
+name|WSRequest
 name|wrh
 init|=
 name|WS

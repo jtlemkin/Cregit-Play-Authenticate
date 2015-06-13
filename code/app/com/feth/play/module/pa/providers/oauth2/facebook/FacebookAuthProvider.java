@@ -231,6 +231,18 @@ name|OAuth2AuthProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -291,6 +303,8 @@ name|USER_INFO_FIELDS_SETTING_KEY
 init|=
 literal|"userInfoFields"
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|FacebookAuthProvider
 parameter_list|(

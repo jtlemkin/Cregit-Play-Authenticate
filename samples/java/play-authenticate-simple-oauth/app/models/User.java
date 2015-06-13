@@ -119,18 +119,6 @@ end_import
 
 begin_import
 import|import
-name|play
-operator|.
-name|db
-operator|.
-name|ebean
-operator|.
-name|Model
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|avaje
@@ -239,7 +227,7 @@ specifier|public
 class|class
 name|User
 extends|extends
-name|Model
+name|AppModel
 block|{
 comment|/** 	 *  	 */
 specifier|private

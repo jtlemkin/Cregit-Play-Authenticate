@@ -91,6 +91,18 @@ name|AuthUser
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_comment
 comment|/** A really simple basic auth provider that accepts one hard coded user */
 end_comment
@@ -102,6 +114,8 @@ name|MyStupidBasicAuthProvider
 extends|extends
 name|BasicAuthProvider
 block|{
+annotation|@
+name|Inject
 specifier|public
 name|MyStupidBasicAuthProvider
 parameter_list|(

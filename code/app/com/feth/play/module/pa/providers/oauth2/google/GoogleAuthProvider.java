@@ -129,6 +129,18 @@ name|OAuth2AuthProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -157,6 +169,8 @@ name|USER_INFO_URL_SETTING_KEY
 init|=
 literal|"userInfoUrl"
 decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
 name|GoogleAuthProvider
 parameter_list|(

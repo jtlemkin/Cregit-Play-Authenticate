@@ -37,18 +37,6 @@ end_import
 
 begin_import
 import|import
-name|play
-operator|.
-name|db
-operator|.
-name|ebean
-operator|.
-name|Model
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|feth
@@ -72,7 +60,7 @@ specifier|public
 class|class
 name|LinkedAccount
 extends|extends
-name|Model
+name|AppModel
 block|{
 comment|/** 	 *  	 */
 specifier|private

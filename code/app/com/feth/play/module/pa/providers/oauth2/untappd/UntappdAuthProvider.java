@@ -203,6 +203,18 @@ name|OAuth2AuthProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
 begin_comment
 comment|/**  * Auth provider for Untappd beer social network  * https://www.untappd.com  */
 end_comment
@@ -287,6 +299,8 @@ comment|// Use this value for REDIRECT_URL in local development
 comment|// and put same URL in your Untappd App page
 comment|// private static final String CALLBACK_URL =
 comment|// "http://localhost:9000/authenticate/untappd";
+annotation|@
+name|Inject
 specifier|public
 name|UntappdAuthProvider
 parameter_list|(

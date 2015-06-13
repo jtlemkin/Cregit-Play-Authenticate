@@ -110,6 +110,8 @@ name|Global
 extends|extends
 name|GlobalSettings
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|onStart

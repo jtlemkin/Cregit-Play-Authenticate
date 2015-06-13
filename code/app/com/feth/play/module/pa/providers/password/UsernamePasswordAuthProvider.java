@@ -1044,12 +1044,7 @@ name|subject
 argument_list|,
 name|body
 argument_list|,
-operator|new
-name|String
-index|[]
-block|{
 name|recipient
-block|}
 argument_list|)
 argument_list|)
 return|;
