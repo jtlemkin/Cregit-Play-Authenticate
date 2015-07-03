@@ -54,12 +54,11 @@ end_import
 begin_class
 specifier|public
 class|class
-name|Authenticate
+name|AuthenticateDI
 extends|extends
 name|AuthenticateBase
 block|{
 specifier|public
-specifier|static
 name|Result
 name|authenticate
 parameter_list|(
@@ -101,7 +100,6 @@ argument_list|)
 return|;
 block|}
 specifier|public
-specifier|static
 name|Result
 name|logout
 parameter_list|()
