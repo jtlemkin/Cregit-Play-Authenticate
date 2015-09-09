@@ -73,6 +73,18 @@ name|avaje
 operator|.
 name|ebean
 operator|.
+name|Model
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|avaje
+operator|.
+name|ebean
+operator|.
 name|ExpressionList
 import|;
 end_import
@@ -923,8 +935,8 @@ operator|.
 name|save
 argument_list|()
 expr_stmt|;
-comment|// user.saveManyToManyAssociations("roles");
-comment|// user.saveManyToManyAssociations("permissions");
+comment|// Ebean.saveManyToManyAssociations(user, "roles");
+comment|// Ebean.saveManyToManyAssociations(user, "permissions");
 return|return
 name|user
 return|;
