@@ -31,9 +31,9 @@ end_import
 
 begin_import
 import|import
-name|play
+name|com
 operator|.
-name|db
+name|avaje
 operator|.
 name|ebean
 operator|.
@@ -72,7 +72,7 @@ name|Model
 implements|implements
 name|Role
 block|{
-comment|/** 	 *  	 */
+comment|/** 	 * 	 */
 specifier|private
 specifier|static
 specifier|final

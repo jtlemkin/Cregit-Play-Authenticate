@@ -69,9 +69,9 @@ end_import
 
 begin_import
 import|import
-name|play
+name|com
 operator|.
-name|db
+name|avaje
 operator|.
 name|ebean
 operator|.
@@ -144,7 +144,7 @@ literal|"PR"
 argument_list|)
 name|PASSWORD_RESET
 block|}
-comment|/** 	 *  	 */
+comment|/** 	 * 	 */
 specifier|private
 specifier|static
 specifier|final
