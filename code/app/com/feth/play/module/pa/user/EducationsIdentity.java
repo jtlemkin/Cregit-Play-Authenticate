@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collection
@@ -34,6 +44,8 @@ specifier|public
 specifier|static
 class|class
 name|EducationInfo
+implements|implements
+name|Serializable
 block|{
 specifier|protected
 name|String
