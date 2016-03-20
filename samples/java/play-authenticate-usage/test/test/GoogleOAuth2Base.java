@@ -69,7 +69,31 @@ name|OAuth2AuthProvider
 operator|.
 name|SettingKeys
 operator|.
-name|*
+name|CLIENT_ID
+import|;
+end_import
+
+begin_import
+import|import static
+name|com
+operator|.
+name|feth
+operator|.
+name|play
+operator|.
+name|module
+operator|.
+name|pa
+operator|.
+name|providers
+operator|.
+name|oauth2
+operator|.
+name|OAuth2AuthProvider
+operator|.
+name|SettingKeys
+operator|.
+name|CLIENT_SECRET
 import|;
 end_import
 
@@ -154,7 +178,7 @@ name|Class
 argument_list|<
 name|GoogleAuthProvider
 argument_list|>
-name|getProviderUnderTest
+name|getProviderClass
 parameter_list|()
 block|{
 return|return
@@ -167,6 +191,8 @@ specifier|protected
 name|void
 name|signupUser
 parameter_list|()
+throws|throws
+name|InterruptedException
 block|{
 name|signupFill
 argument_list|()
@@ -179,6 +205,8 @@ specifier|protected
 name|void
 name|signupFill
 parameter_list|()
+throws|throws
+name|InterruptedException
 block|{
 name|goToLogin
 argument_list|()
@@ -214,6 +242,18 @@ operator|.
 name|isLoaded
 argument_list|()
 expr_stmt|;
+name|TimeUnit
+operator|.
+name|SECONDS
+operator|.
+name|sleep
+argument_list|(
+literal|2
+argument_list|)
+expr_stmt|;
+comment|// couldn't figure any other way to make it work
+comment|// apparently page is actually not ready at this point
+comment|// #Passwd element is not being found without this sleep
 name|browser
 operator|.
 name|fill

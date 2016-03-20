@@ -249,7 +249,7 @@ name|Class
 argument_list|<
 name|EventBriteAuthProvider
 argument_list|>
-name|getProviderUnderTest
+name|getProviderClass
 parameter_list|()
 block|{
 return|return
@@ -289,7 +289,7 @@ call|(
 name|EventBriteAuthUser
 call|)
 argument_list|(
-name|MyTestUserServicePlugin
+name|MyTestUserServiceService
 operator|.
 name|getLastAuthUser
 argument_list|()

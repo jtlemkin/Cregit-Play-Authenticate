@@ -71,9 +71,11 @@ end_import
 
 begin_import
 import|import
-name|controllers
+name|javax
 operator|.
-name|routes
+name|inject
+operator|.
+name|Inject
 import|;
 end_import
 
@@ -92,6 +94,26 @@ name|FLASH_ERROR_KEY
 init|=
 literal|"error"
 decl_stmt|;
+specifier|private
+name|PlayAuthenticate
+name|auth
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|public
+name|JavaController
+parameter_list|(
+name|PlayAuthenticate
+name|auth
+parameter_list|)
+block|{
+name|this
+operator|.
+name|auth
+operator|=
+name|auth
+expr_stmt|;
+block|}
 annotation|@
 name|Security
 operator|.
@@ -102,7 +124,6 @@ operator|.
 name|class
 argument_list|)
 specifier|public
-specifier|static
 name|Result
 name|index
 parameter_list|()
@@ -110,7 +131,9 @@ block|{
 name|AuthUser
 name|user
 init|=
-name|PlayAuthenticate
+name|this
+operator|.
+name|auth
 operator|.
 name|getUser
 argument_list|(

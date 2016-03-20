@@ -135,6 +135,18 @@ end_import
 
 begin_import
 import|import
+name|play
+operator|.
+name|libs
+operator|.
+name|ws
+operator|.
+name|WSClient
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -305,7 +317,7 @@ name|Class
 argument_list|<
 name|FacebookAuthProvider
 argument_list|>
-name|getProviderUnderTest
+name|getProviderClass
 parameter_list|()
 block|{
 return|return
@@ -326,7 +338,7 @@ block|{
 name|signupUser
 argument_list|()
 expr_stmt|;
-comment|// Make sure the redirect from localhost to fb happened already (and that {@link MyUserServicePlugin#save()} gets called)
+comment|// Make sure the redirect from localhost to fb happened already (and that {@link MyUserService#save()} gets called)
 name|Thread
 operator|.
 name|sleep
@@ -355,7 +367,7 @@ call|(
 name|FacebookAuthUser
 call|)
 argument_list|(
-name|MyTestUserServicePlugin
+name|MyTestUserServiceService
 operator|.
 name|getLastAuthUser
 argument_list|()
@@ -657,6 +669,8 @@ specifier|public
 name|void
 name|shutdown
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 specifier|final
 name|FacebookAuthUser
@@ -666,7 +680,7 @@ call|(
 name|FacebookAuthUser
 call|)
 argument_list|(
-name|MyTestUserServicePlugin
+name|MyTestUserServiceService
 operator|.
 name|getLastAuthUser
 argument_list|()
@@ -696,7 +710,22 @@ argument_list|)
 operator|+
 literal|"/permissions"
 decl_stmt|;
-name|WS
+name|WSClient
+name|wsClient
+init|=
+name|app
+operator|.
+name|injector
+argument_list|()
+operator|.
+name|instanceOf
+argument_list|(
+name|WSClient
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|wsClient
 operator|.
 name|url
 argument_list|(
@@ -735,6 +764,9 @@ literal|"delete"
 argument_list|)
 operator|.
 name|get
+argument_list|()
+operator|.
+name|toCompletableFuture
 argument_list|()
 operator|.
 name|get

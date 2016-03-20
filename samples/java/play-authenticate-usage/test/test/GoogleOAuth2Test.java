@@ -96,6 +96,8 @@ specifier|public
 name|void
 name|itShouldBePossibleToSignUp
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|signupUser
 argument_list|()
@@ -125,7 +127,7 @@ call|)
 argument_list|(
 name|OAuth2Test
 operator|.
-name|MyTestUserServicePlugin
+name|MyTestUserServiceService
 operator|.
 name|getLastAuthUser
 argument_list|()
@@ -234,6 +236,8 @@ specifier|public
 name|void
 name|itShouldStillWorkIfCacheGetsCleared
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|signupFill
 argument_list|()

@@ -17,11 +17,17 @@ end_package
 
 begin_import
 import|import
+name|com
+operator|.
+name|feth
+operator|.
 name|play
 operator|.
-name|mvc
+name|module
 operator|.
-name|Controller
+name|pa
+operator|.
+name|PlayAuthenticate
 import|;
 end_import
 
@@ -37,17 +43,11 @@ end_import
 
 begin_import
 import|import
-name|com
+name|javax
 operator|.
-name|feth
+name|inject
 operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|pa
-operator|.
-name|PlayAuthenticate
+name|Inject
 import|;
 end_import
 
@@ -58,8 +58,27 @@ name|Authenticate
 extends|extends
 name|AuthenticateBase
 block|{
+specifier|private
+name|PlayAuthenticate
+name|auth
+decl_stmt|;
+annotation|@
+name|Inject
 specifier|public
-specifier|static
+name|Authenticate
+parameter_list|(
+name|PlayAuthenticate
+name|auth
+parameter_list|)
+block|{
+name|this
+operator|.
+name|auth
+operator|=
+name|auth
+expr_stmt|;
+block|}
+specifier|public
 name|Result
 name|authenticate
 parameter_list|(
@@ -87,7 +106,9 @@ name|PAYLOAD_KEY
 argument_list|)
 decl_stmt|;
 return|return
-name|PlayAuthenticate
+name|this
+operator|.
+name|auth
 operator|.
 name|handleAuthentication
 argument_list|(
@@ -101,7 +122,6 @@ argument_list|)
 return|;
 block|}
 specifier|public
-specifier|static
 name|Result
 name|logout
 parameter_list|()
@@ -113,7 +133,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
-name|PlayAuthenticate
+name|this
+operator|.
+name|auth
 operator|.
 name|logout
 argument_list|(

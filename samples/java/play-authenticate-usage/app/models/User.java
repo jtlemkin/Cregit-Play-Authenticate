@@ -13,7 +13,7 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
-name|core
+name|java
 operator|.
 name|models
 operator|.
@@ -29,7 +29,7 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
-name|core
+name|java
 operator|.
 name|models
 operator|.
@@ -45,7 +45,7 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
-name|core
+name|java
 operator|.
 name|models
 operator|.
@@ -690,10 +690,6 @@ name|active
 operator|=
 literal|false
 expr_stmt|;
-name|Ebean
-operator|.
-name|save
-argument_list|(
 name|Arrays
 operator|.
 name|asList
@@ -706,6 +702,17 @@ name|otherUser
 block|,
 name|this
 block|}
+argument_list|)
+operator|.
+name|forEach
+argument_list|(
+name|u
+lambda|->
+name|Ebean
+operator|.
+name|save
+argument_list|(
+name|u
 argument_list|)
 argument_list|)
 expr_stmt|;

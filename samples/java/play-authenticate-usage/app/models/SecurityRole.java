@@ -49,7 +49,7 @@ name|objectify
 operator|.
 name|deadbolt
 operator|.
-name|core
+name|java
 operator|.
 name|models
 operator|.

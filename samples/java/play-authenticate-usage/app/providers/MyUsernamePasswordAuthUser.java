@@ -101,7 +101,8 @@ name|name
 operator|=
 name|signup
 operator|.
-name|name
+name|getName
+argument_list|()
 expr_stmt|;
 block|}
 comment|/** 	 * Used for password reset only - do not use this to signup a user! 	 * @param password 	 */
