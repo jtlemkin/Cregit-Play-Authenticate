@@ -123,6 +123,18 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|openqa
+operator|.
+name|selenium
+operator|.
+name|WebDriverException
+import|;
+end_import
+
+begin_import
+import|import
 name|play
 operator|.
 name|libs
@@ -493,7 +505,7 @@ argument_list|)
 operator|.
 name|find
 argument_list|(
-literal|"#u_0_2"
+literal|"#loginbutton"
 argument_list|)
 operator|.
 name|click
@@ -514,11 +526,36 @@ comment|// save browser? no!
 try|try
 block|{
 comment|// try, because this is not checked for test users, because they are not asked
+specifier|final
+name|String
+name|selector
+init|=
+literal|"#u_0_2"
+decl_stmt|;
+name|browser
+operator|.
+name|await
+argument_list|()
+operator|.
+name|atMost
+argument_list|(
+literal|10
+argument_list|,
+name|TimeUnit
+operator|.
+name|SECONDS
+argument_list|)
+operator|.
+name|until
+argument_list|(
+name|selector
+argument_list|)
+expr_stmt|;
 name|browser
 operator|.
 name|find
 argument_list|(
-literal|"#u_0_2"
+name|selector
 argument_list|)
 operator|.
 name|click
@@ -563,6 +600,15 @@ name|enve
 parameter_list|)
 block|{
 comment|// desktop
+block|}
+catch|catch
+parameter_list|(
+specifier|final
+name|WebDriverException
+name|wde
+parameter_list|)
+block|{
+comment|// something else
 block|}
 comment|// check login layout
 name|checkLoginLayout
