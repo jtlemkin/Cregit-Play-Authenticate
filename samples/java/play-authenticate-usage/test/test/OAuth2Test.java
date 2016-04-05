@@ -262,15 +262,6 @@ argument_list|,
 literal|"true"
 argument_list|)
 expr_stmt|;
-name|additionalConfiguration
-operator|.
-name|put
-argument_list|(
-literal|"logger.application"
-argument_list|,
-literal|"WARN"
-argument_list|)
-expr_stmt|;
 name|amendConfiguration
 argument_list|(
 name|additionalConfiguration
