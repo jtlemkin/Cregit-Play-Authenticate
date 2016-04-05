@@ -193,7 +193,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|additionalConfiguration
 parameter_list|)

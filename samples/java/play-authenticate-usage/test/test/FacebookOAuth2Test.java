@@ -129,18 +129,6 @@ name|libs
 operator|.
 name|ws
 operator|.
-name|WS
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
-name|libs
-operator|.
-name|ws
-operator|.
 name|WSClient
 import|;
 end_import
@@ -261,7 +249,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|additionalConfiguration
 parameter_list|)
