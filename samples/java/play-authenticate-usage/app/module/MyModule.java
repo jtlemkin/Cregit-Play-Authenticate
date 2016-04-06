@@ -237,7 +237,7 @@ argument_list|()
 operator|.
 name|implement
 argument_list|(
-name|Mailer
+name|IMailer
 operator|.
 name|class
 argument_list|,
