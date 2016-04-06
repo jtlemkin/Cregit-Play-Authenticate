@@ -19,31 +19,27 @@ end_package
 
 begin_import
 import|import
-name|java
+name|akka
 operator|.
-name|util
+name|actor
 operator|.
-name|Arrays
+name|Cancellable
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|com
 operator|.
-name|util
+name|feth
 operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
+name|play
 operator|.
-name|inject
+name|module
 operator|.
-name|Inject
+name|mail
+operator|.
+name|IMailer
 import|;
 end_import
 
@@ -75,23 +71,7 @@ name|module
 operator|.
 name|mail
 operator|.
-name|MailerImpl
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|feth
-operator|.
-name|play
-operator|.
-name|module
-operator|.
-name|mail
-operator|.
-name|MailerImpl
+name|Mailer
 operator|.
 name|Mail
 import|;
@@ -109,7 +89,7 @@ name|module
 operator|.
 name|mail
 operator|.
-name|MailerImpl
+name|Mailer
 operator|.
 name|Mail
 operator|.
@@ -129,7 +109,7 @@ name|module
 operator|.
 name|mail
 operator|.
-name|MailerImpl
+name|Mailer
 operator|.
 name|MailerFactory
 import|;
@@ -225,16 +205,6 @@ end_import
 
 begin_import
 import|import
-name|akka
-operator|.
-name|actor
-operator|.
-name|Cancellable
-import|;
-end_import
-
-begin_import
-import|import
 name|play
 operator|.
 name|data
@@ -295,6 +265,36 @@ name|Result
 import|;
 end_import
 
+begin_import
+import|import
+name|javax
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -348,7 +348,7 @@ specifier|final
 name|String
 name|SETTING_KEY_MAIL_FROM_EMAIL
 init|=
-name|MailerImpl
+name|Mailer
 operator|.
 name|SettingKeys
 operator|.
@@ -360,7 +360,7 @@ specifier|final
 name|String
 name|SETTING_KEY_MAIL_DELAY
 init|=
-name|MailerImpl
+name|Mailer
 operator|.
 name|SettingKeys
 operator|.
@@ -372,7 +372,7 @@ specifier|final
 name|String
 name|SETTING_KEY_MAIL_FROM
 init|=
-name|MailerImpl
+name|Mailer
 operator|.
 name|SettingKeys
 operator|.
@@ -412,7 +412,7 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|Mailer
+name|IMailer
 name|mailer
 decl_stmt|;
 specifier|protected
@@ -950,7 +950,7 @@ name|get
 argument_list|()
 return|;
 block|}
-comment|/** 	 * You might overwrite this to provide your own recipient format 	 * implementation, 	 * however the default should be fine for most cases 	 *  	 * @param user 	 * @return 	 */
+comment|/** 	 * You might overwrite this to provide your own recipient format 	 * implementation, 	 * however the default should be fine for most cases 	 * 	 * @param user 	 * @return 	 */
 specifier|protected
 name|String
 name|getEmailName
@@ -1011,7 +1011,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|MailerImpl
+name|Mailer
 operator|.
 name|getEmailName
 argument_list|(
@@ -1090,7 +1090,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Called to send mails. You might want to override this in order to 	 * customize mail sending e.g. by using a different mailer service 	 * implementation. 	 *  	 * @param subject 	 *            The mail's subject. 	 * @param body 	 *            The mail's body. 	 * @param recipient 	 *            The (formatted) recipient. 	 * @return The {@link akka.actor.Cancellable} that can be used to cancel the 	 *         action. 	 */
+comment|/** 	 * Called to send mails. You might want to override this in order to 	 * customize mail sending e.g. by using a different mailer service 	 * implementation. 	 * 	 * @param subject 	 *            The mail's subject. 	 * @param body 	 *            The mail's body. 	 * @param recipient 	 *            The (formatted) recipient. 	 * @return The {@link akka.actor.Cancellable} that can be used to cancel the 	 *         action. 	 */
 specifier|protected
 name|Cancellable
 name|sendMail
@@ -1123,7 +1123,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Send a pre-assembled mail. 	 *  	 * @param mail 	 *            The mail to be sent. 	 * @return The {@link akka.actor.Cancellable} that can be used to cancel the 	 *         action. 	 */
+comment|/** 	 * Send a pre-assembled mail. 	 * 	 * @param mail 	 *            The mail to be sent. 	 * @return The {@link akka.actor.Cancellable} that can be used to cancel the 	 *         action. 	 */
 specifier|protected
 name|Cancellable
 name|sendMail
@@ -1199,7 +1199,7 @@ name|Context
 name|ctx
 parameter_list|)
 function_decl|;
-comment|/** 	 * This gets called when the user shall be logged in directly after signing up 	 *  	 * @param authUser 	 * @param context 	 * @return 	 */
+comment|/** 	 * This gets called when the user shall be logged in directly after signing up 	 * 	 * @param authUser 	 * @param context 	 * @return 	 */
 specifier|protected
 specifier|abstract
 name|UL
