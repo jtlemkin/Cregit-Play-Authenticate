@@ -629,6 +629,10 @@ literal|1L
 decl_stmt|;
 specifier|public
 name|SerializableRequestToken
+parameter_list|()
+block|{ 		}
+specifier|public
+name|SerializableRequestToken
 parameter_list|(
 name|RequestToken
 name|source
