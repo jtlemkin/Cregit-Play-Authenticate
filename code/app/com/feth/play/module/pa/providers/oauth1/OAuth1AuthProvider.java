@@ -630,7 +630,15 @@ decl_stmt|;
 specifier|public
 name|SerializableRequestToken
 parameter_list|()
-block|{ 		}
+block|{
+name|super
+argument_list|(
+literal|null
+argument_list|,
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|SerializableRequestToken
 parameter_list|(
