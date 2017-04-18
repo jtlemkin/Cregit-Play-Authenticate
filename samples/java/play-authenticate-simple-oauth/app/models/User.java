@@ -336,7 +336,7 @@ decl_stmt|;
 return|return
 name|exp
 operator|.
-name|findRowCount
+name|findCount
 argument_list|()
 operator|>
 literal|0

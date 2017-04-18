@@ -42,7 +42,7 @@ name|SecurityRole
 operator|.
 name|find
 operator|.
-name|findRowCount
+name|findCount
 argument_list|()
 operator|==
 literal|0
