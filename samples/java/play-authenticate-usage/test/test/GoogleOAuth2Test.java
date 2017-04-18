@@ -91,6 +91,11 @@ extends|extends
 name|GoogleOAuth2Base
 block|{
 annotation|@
+name|Ignore
+argument_list|(
+literal|"Security issues, Google preventing login from travis"
+argument_list|)
+annotation|@
 name|Test
 specifier|public
 name|void
@@ -230,6 +235,11 @@ literal|"Joscha Feth"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Ignore
+argument_list|(
+literal|"Security issues, Google preventing login from travis"
+argument_list|)
 annotation|@
 name|Test
 specifier|public
