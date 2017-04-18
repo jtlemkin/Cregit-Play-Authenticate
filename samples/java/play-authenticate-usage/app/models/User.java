@@ -483,7 +483,7 @@ block|}
 return|return
 name|exp
 operator|.
-name|findCount
+name|findRowCount
 argument_list|()
 operator|>
 literal|0
