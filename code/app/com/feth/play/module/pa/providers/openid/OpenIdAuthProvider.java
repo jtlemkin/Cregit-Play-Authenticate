@@ -117,9 +117,13 @@ end_import
 
 begin_import
 import|import
-name|play
+name|com
 operator|.
-name|Configuration
+name|typesafe
+operator|.
+name|config
+operator|.
+name|Config
 import|;
 end_import
 
@@ -262,6 +266,18 @@ operator|.
 name|concurrent
 operator|.
 name|Future
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|stream
+operator|.
+name|Collectors
 import|;
 end_import
 
@@ -712,7 +728,7 @@ name|subKey
 parameter_list|)
 block|{
 specifier|final
-name|Configuration
+name|Config
 name|attributes
 init|=
 name|getConfiguration
@@ -745,8 +761,29 @@ name|keys
 init|=
 name|attributes
 operator|.
-name|keys
+name|entrySet
 argument_list|()
+operator|.
+name|stream
+argument_list|()
+operator|.
+name|map
+argument_list|(
+name|x
+lambda|->
+name|x
+operator|.
+name|getKey
+argument_list|()
+argument_list|)
+operator|.
+name|collect
+argument_list|(
+name|Collectors
+operator|.
+name|toSet
+argument_list|()
+argument_list|)
 decl_stmt|;
 specifier|final
 name|Map

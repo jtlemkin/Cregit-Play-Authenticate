@@ -141,9 +141,13 @@ end_import
 
 begin_import
 import|import
-name|play
+name|com
 operator|.
-name|Configuration
+name|typesafe
+operator|.
+name|config
+operator|.
+name|Config
 import|;
 end_import
 
@@ -766,7 +770,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration
@@ -1168,7 +1172,7 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration

@@ -117,6 +117,16 @@ begin_import
 import|import
 name|play
 operator|.
+name|i18n
+operator|.
+name|MessagesApi
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
 name|inject
 operator|.
 name|ApplicationLifecycle
@@ -213,6 +223,10 @@ parameter_list|,
 specifier|final
 name|WSClient
 name|wsClient
+parameter_list|,
+specifier|final
+name|MessagesApi
+name|messagesApi
 parameter_list|)
 block|{
 name|super
@@ -222,6 +236,8 @@ argument_list|,
 name|lifecycle
 argument_list|,
 name|wsClient
+argument_list|,
+name|messagesApi
 argument_list|)
 expr_stmt|;
 block|}

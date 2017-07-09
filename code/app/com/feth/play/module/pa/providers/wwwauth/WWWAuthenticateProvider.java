@@ -333,10 +333,13 @@ operator|.
 name|request
 argument_list|()
 operator|.
-name|getHeader
+name|header
 argument_list|(
 literal|"Authorization"
 argument_list|)
+operator|.
+name|get
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
