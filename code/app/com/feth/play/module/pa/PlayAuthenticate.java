@@ -319,7 +319,7 @@ name|List
 argument_list|<
 name|Lang
 argument_list|>
-name|prefferedLangs
+name|preferredLangs
 decl_stmt|;
 specifier|private
 name|Config
@@ -389,7 +389,7 @@ argument_list|(
 name|englishLocale
 argument_list|)
 decl_stmt|;
-name|prefferedLangs
+name|preferredLangs
 operator|=
 name|Arrays
 operator|.
@@ -460,7 +460,7 @@ name|messagesApi
 operator|.
 name|preferred
 argument_list|(
-name|prefferedLangs
+name|preferredLangs
 argument_list|)
 operator|.
 name|at
@@ -2058,7 +2058,7 @@ name|messagesApi
 operator|.
 name|preferred
 argument_list|(
-name|prefferedLangs
+name|preferredLangs
 argument_list|)
 operator|.
 name|at
@@ -2127,7 +2127,7 @@ name|messagesApi
 operator|.
 name|preferred
 argument_list|(
-name|prefferedLangs
+name|preferredLangs
 argument_list|)
 operator|.
 name|at
@@ -2408,7 +2408,7 @@ name|messagesApi
 operator|.
 name|preferred
 argument_list|(
-name|prefferedLangs
+name|preferredLangs
 argument_list|)
 operator|.
 name|at
@@ -2522,7 +2522,7 @@ name|messagesApi
 operator|.
 name|preferred
 argument_list|(
-name|prefferedLangs
+name|preferredLangs
 argument_list|)
 operator|.
 name|at
@@ -2571,7 +2571,7 @@ name|messagesApi
 operator|.
 name|preferred
 argument_list|(
-name|prefferedLangs
+name|preferredLangs
 argument_list|)
 operator|.
 name|at
