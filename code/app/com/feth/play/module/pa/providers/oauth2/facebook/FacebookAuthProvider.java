@@ -358,6 +358,8 @@ specifier|abstract
 class|class
 name|FacebookConstants
 extends|extends
+name|OAuth2AuthProvider
+operator|.
 name|Constants
 block|{
 specifier|public

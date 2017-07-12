@@ -55,9 +55,7 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|avaje
+name|io
 operator|.
 name|ebean
 operator|.
@@ -67,9 +65,7 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|avaje
+name|io
 operator|.
 name|ebean
 operator|.
@@ -184,6 +180,16 @@ operator|.
 name|user
 operator|.
 name|FirstLastNameIdentity
+import|;
+end_import
+
+begin_import
+import|import
+name|io
+operator|.
+name|ebean
+operator|.
+name|Finder
 import|;
 end_import
 
@@ -359,9 +365,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
-name|AppModel
-operator|.
-name|Find
+name|Finder
 argument_list|<
 name|Long
 argument_list|,
@@ -370,16 +374,13 @@ argument_list|>
 name|find
 init|=
 operator|new
-name|AppModel
-operator|.
-name|Find
-argument_list|<
-name|Long
-argument_list|,
+name|Finder
+argument_list|<>
+argument_list|(
 name|User
-argument_list|>
-argument_list|()
-block|{}
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 annotation|@
 name|Override
@@ -483,7 +484,10 @@ block|}
 return|return
 name|exp
 operator|.
-name|findRowCount
+name|query
+argument_list|()
+operator|.
+name|findCount
 argument_list|()
 operator|>
 literal|0
@@ -504,6 +508,9 @@ parameter_list|)
 block|{
 return|return
 name|find
+operator|.
+name|query
+argument_list|()
 operator|.
 name|where
 argument_list|()
@@ -1130,6 +1137,9 @@ parameter_list|)
 block|{
 return|return
 name|find
+operator|.
+name|query
+argument_list|()
 operator|.
 name|where
 argument_list|()

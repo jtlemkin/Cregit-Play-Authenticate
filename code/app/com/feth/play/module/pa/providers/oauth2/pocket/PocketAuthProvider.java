@@ -432,6 +432,8 @@ specifier|abstract
 class|class
 name|PocketConstants
 extends|extends
+name|OAuth2AuthProvider
+operator|.
 name|Constants
 block|{
 specifier|public
