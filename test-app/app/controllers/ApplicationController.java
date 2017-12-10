@@ -6,18 +6,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|play
-operator|.
-name|data
-operator|.
-name|Form
-operator|.
-name|form
-import|;
-end_import
-
-begin_import
 import|import
 name|com
 operator|.
@@ -56,6 +44,16 @@ operator|.
 name|data
 operator|.
 name|Form
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|data
+operator|.
+name|FormFactory
 import|;
 end_import
 
@@ -136,6 +134,11 @@ name|ApplicationController
 extends|extends
 name|Controller
 block|{
+annotation|@
+name|Inject
+name|FormFactory
+name|formFactory
+decl_stmt|;
 specifier|public
 specifier|final
 name|String
@@ -203,6 +206,8 @@ name|login
 operator|.
 name|render
 argument_list|(
+name|formFactory
+operator|.
 name|form
 argument_list|(
 name|Login
@@ -248,6 +253,8 @@ name|Login
 argument_list|>
 name|filledForm
 init|=
+name|formFactory
+operator|.
 name|form
 argument_list|(
 name|Login
@@ -313,6 +320,8 @@ name|signup
 operator|.
 name|render
 argument_list|(
+name|formFactory
+operator|.
 name|form
 argument_list|(
 name|Signup
@@ -358,6 +367,8 @@ name|Signup
 argument_list|>
 name|filledForm
 init|=
+name|formFactory
+operator|.
 name|form
 argument_list|(
 name|Signup

@@ -123,6 +123,16 @@ name|play
 operator|.
 name|data
 operator|.
+name|FormFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|play
+operator|.
+name|data
+operator|.
 name|validation
 operator|.
 name|Constraints
@@ -253,18 +263,6 @@ name|UUID
 import|;
 end_import
 
-begin_import
-import|import static
-name|play
-operator|.
-name|data
-operator|.
-name|Form
-operator|.
-name|form
-import|;
-end_import
-
 begin_class
 annotation|@
 name|Singleton
@@ -338,6 +336,11 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+specifier|private
+specifier|final
+name|FormFactory
+name|formFactory
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|public
@@ -354,6 +357,10 @@ parameter_list|,
 specifier|final
 name|MailerFactory
 name|mailerFactory
+parameter_list|,
+specifier|final
+name|FormFactory
+name|formFactory
 parameter_list|)
 block|{
 name|super
@@ -364,6 +371,12 @@ name|lifecycle
 argument_list|,
 name|mailerFactory
 argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|formFactory
+operator|=
+name|formFactory
 expr_stmt|;
 block|}
 specifier|public
@@ -1057,6 +1070,8 @@ name|getSignupForm
 parameter_list|()
 block|{
 return|return
+name|formFactory
+operator|.
 name|form
 argument_list|(
 name|Signup
@@ -1074,6 +1089,8 @@ name|getLoginForm
 parameter_list|()
 block|{
 return|return
+name|formFactory
+operator|.
 name|form
 argument_list|(
 name|Login
@@ -1093,7 +1110,6 @@ name|Context
 name|ctx
 parameter_list|)
 block|{
-comment|// TODO change to getSignupForm().bindFromRequest(request) after 2.1
 name|Context
 operator|.
 name|current

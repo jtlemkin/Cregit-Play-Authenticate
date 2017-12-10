@@ -207,16 +207,6 @@ begin_import
 import|import
 name|play
 operator|.
-name|data
-operator|.
-name|Form
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
 name|inject
 operator|.
 name|ApplicationLifecycle
