@@ -7,23 +7,21 @@ end_package
 
 begin_import
 import|import
-name|javax
+name|io
 operator|.
-name|persistence
+name|ebean
 operator|.
-name|MappedSuperclass
+name|Model
 import|;
 end_import
 
 begin_import
 import|import
-name|com
+name|javax
 operator|.
-name|avaje
+name|persistence
 operator|.
-name|ebean
-operator|.
-name|Model
+name|MappedSuperclass
 import|;
 end_import
 

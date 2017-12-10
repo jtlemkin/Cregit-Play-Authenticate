@@ -109,6 +109,18 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|typesafe
+operator|.
+name|config
+operator|.
+name|Config
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -153,14 +165,6 @@ begin_import
 import|import
 name|play
 operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
 name|Logger
 import|;
 end_import
@@ -171,7 +175,7 @@ name|play
 operator|.
 name|i18n
 operator|.
-name|Messages
+name|MessagesApi
 import|;
 end_import
 
@@ -379,6 +383,11 @@ specifier|final
 name|WSClient
 name|wsClient
 decl_stmt|;
+specifier|private
+specifier|final
+name|MessagesApi
+name|messagesApi
+decl_stmt|;
 specifier|public
 name|OAuth2AuthProvider
 parameter_list|(
@@ -393,6 +402,10 @@ parameter_list|,
 specifier|final
 name|WSClient
 name|wsClient
+parameter_list|,
+specifier|final
+name|MessagesApi
+name|messagesApi
 parameter_list|)
 block|{
 name|super
@@ -407,6 +420,12 @@ operator|.
 name|wsClient
 operator|=
 name|wsClient
+expr_stmt|;
+name|this
+operator|.
+name|messagesApi
+operator|=
+name|messagesApi
 expr_stmt|;
 block|}
 annotation|@
@@ -746,7 +765,7 @@ control|)
 block|{
 name|request
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|param
 operator|.
@@ -807,7 +826,7 @@ name|String
 name|getAccessTokenParams
 parameter_list|(
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|,
 specifier|final
@@ -939,7 +958,7 @@ throws|,
 name|ResolverMissingException
 block|{
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration
@@ -984,7 +1003,7 @@ argument_list|)
 decl_stmt|;
 name|wrh
 operator|.
-name|setHeader
+name|addHeader
 argument_list|(
 name|CONTENT_TYPE
 argument_list|,
@@ -1013,7 +1032,7 @@ control|)
 block|{
 name|wrh
 operator|.
-name|setHeader
+name|addHeader
 argument_list|(
 name|header
 operator|.
@@ -1111,7 +1130,7 @@ throws|throws
 name|AuthException
 block|{
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration
@@ -1157,7 +1176,7 @@ argument_list|>
 name|getAuthParams
 parameter_list|(
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|,
 specifier|final
@@ -1352,7 +1371,7 @@ name|Request
 name|request
 parameter_list|,
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|)
 throws|throws
@@ -1647,9 +1666,14 @@ throw|throw
 operator|new
 name|AuthException
 argument_list|(
-name|Messages
+name|messagesApi
 operator|.
-name|get
+name|preferred
+argument_list|(
+name|request
+argument_list|)
+operator|.
+name|at
 argument_list|(
 literal|"playauthenticate.core.exception.oauth2.state_param_forged"
 argument_list|)

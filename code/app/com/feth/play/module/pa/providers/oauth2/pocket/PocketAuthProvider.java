@@ -157,6 +157,18 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|typesafe
+operator|.
+name|config
+operator|.
+name|Config
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -201,7 +213,9 @@ begin_import
 import|import
 name|play
 operator|.
-name|Configuration
+name|i18n
+operator|.
+name|MessagesApi
 import|;
 end_import
 
@@ -367,6 +381,10 @@ parameter_list|,
 specifier|final
 name|WSClient
 name|wsClient
+parameter_list|,
+specifier|final
+name|MessagesApi
+name|messagesApi
 parameter_list|)
 block|{
 name|super
@@ -376,6 +394,8 @@ argument_list|,
 name|lifecycle
 argument_list|,
 name|wsClient
+argument_list|,
+name|messagesApi
 argument_list|)
 expr_stmt|;
 block|}
@@ -412,6 +432,8 @@ specifier|abstract
 class|class
 name|PocketConstants
 extends|extends
+name|OAuth2AuthProvider
+operator|.
 name|Constants
 block|{
 specifier|public
@@ -701,7 +723,7 @@ name|String
 name|getAccessTokenParams
 parameter_list|(
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|,
 specifier|final
@@ -787,7 +809,7 @@ throws|throws
 name|AuthException
 block|{
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration
@@ -827,14 +849,14 @@ name|REQUEST_TOKEN_URL
 argument_list|)
 argument_list|)
 operator|.
-name|setHeader
+name|addHeader
 argument_list|(
 literal|"Content-Type"
 argument_list|,
 literal|"application/json"
 argument_list|)
 operator|.
-name|setHeader
+name|addHeader
 argument_list|(
 literal|"X-Accept"
 argument_list|,
@@ -942,7 +964,7 @@ name|Request
 name|request
 parameter_list|,
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|)
 throws|throws
@@ -1015,7 +1037,7 @@ argument_list|>
 name|getAuthParams
 parameter_list|(
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|,
 specifier|final

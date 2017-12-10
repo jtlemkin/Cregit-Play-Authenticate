@@ -87,9 +87,13 @@ end_import
 
 begin_import
 import|import
-name|play
+name|com
 operator|.
-name|Configuration
+name|typesafe
+operator|.
+name|config
+operator|.
+name|Config
 import|;
 end_import
 
@@ -429,7 +433,7 @@ literal|null
 condition|)
 block|{
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration
@@ -604,7 +608,7 @@ name|getKey
 parameter_list|()
 function_decl|;
 specifier|protected
-name|Configuration
+name|Config
 name|getConfiguration
 parameter_list|()
 block|{

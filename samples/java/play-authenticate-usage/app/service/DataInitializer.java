@@ -42,6 +42,9 @@ name|SecurityRole
 operator|.
 name|find
 operator|.
+name|query
+argument_list|()
+operator|.
 name|findCount
 argument_list|()
 operator|==

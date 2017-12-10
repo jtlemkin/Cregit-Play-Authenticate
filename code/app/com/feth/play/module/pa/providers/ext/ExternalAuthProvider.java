@@ -315,10 +315,6 @@ argument_list|(
 name|SettingKeys
 operator|.
 name|TIMEOUT
-argument_list|,
-name|PlayAuthenticate
-operator|.
-name|TIMEOUT
 argument_list|)
 return|;
 block|}
