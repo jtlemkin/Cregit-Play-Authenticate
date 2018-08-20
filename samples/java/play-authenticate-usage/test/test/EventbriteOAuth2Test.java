@@ -386,10 +386,13 @@ name|migrationLightbox
 init|=
 name|browser
 operator|.
-name|findFirst
+name|find
 argument_list|(
 name|migrationLightboxSelector
 argument_list|)
+operator|.
+name|first
+argument_list|()
 decl_stmt|;
 name|migrationLightbox
 operator|.
