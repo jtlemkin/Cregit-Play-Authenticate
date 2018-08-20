@@ -17,9 +17,7 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|avaje
+name|io
 operator|.
 name|ebean
 operator|.
