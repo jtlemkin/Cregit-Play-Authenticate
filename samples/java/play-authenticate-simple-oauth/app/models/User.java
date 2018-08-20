@@ -139,6 +139,16 @@ end_import
 
 begin_import
 import|import
+name|io
+operator|.
+name|ebean
+operator|.
+name|Finder
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|feth
