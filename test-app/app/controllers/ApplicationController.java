@@ -33,14 +33,6 @@ begin_import
 import|import
 name|play
 operator|.
-name|Play
-import|;
-end_import
-
-begin_import
-import|import
-name|play
-operator|.
 name|data
 operator|.
 name|Form
