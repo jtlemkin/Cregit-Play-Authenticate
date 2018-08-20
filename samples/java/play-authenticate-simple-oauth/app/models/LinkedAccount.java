@@ -7,6 +7,16 @@ end_package
 
 begin_import
 import|import
+name|io
+operator|.
+name|ebean
+operator|.
+name|Finder
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|persistence
