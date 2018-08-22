@@ -786,7 +786,7 @@ argument_list|(
 name|url
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|OAuth2AuthProvider
 operator|.
@@ -803,14 +803,14 @@ name|getAccessToken
 argument_list|()
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 literal|"format"
 argument_list|,
 literal|"json"
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 literal|"method"
 argument_list|,
