@@ -120,10 +120,6 @@ argument_list|,
 name|LinkedAccount
 argument_list|>
 argument_list|(
-name|Long
-operator|.
-name|class
-argument_list|,
 name|LinkedAccount
 operator|.
 name|class
@@ -144,6 +140,9 @@ parameter_list|)
 block|{
 return|return
 name|find
+operator|.
+name|query
+argument_list|()
 operator|.
 name|where
 argument_list|()
