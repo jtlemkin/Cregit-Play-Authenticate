@@ -705,6 +705,9 @@ argument_list|(
 name|selector
 argument_list|)
 operator|.
+name|first
+argument_list|()
+operator|.
 name|value
 argument_list|()
 argument_list|)
