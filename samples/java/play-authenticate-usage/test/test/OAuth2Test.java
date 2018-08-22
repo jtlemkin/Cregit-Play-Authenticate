@@ -208,7 +208,7 @@ name|testBrowser
 argument_list|(
 name|Helpers
 operator|.
-name|FIREFOX
+name|CHROME
 argument_list|,
 name|port
 argument_list|)
