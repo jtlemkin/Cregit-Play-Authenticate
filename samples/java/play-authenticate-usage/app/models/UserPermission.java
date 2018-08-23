@@ -139,7 +139,7 @@ argument_list|,
 name|value
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}

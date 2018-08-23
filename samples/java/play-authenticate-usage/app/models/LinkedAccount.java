@@ -157,7 +157,7 @@ argument_list|,
 name|key
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}

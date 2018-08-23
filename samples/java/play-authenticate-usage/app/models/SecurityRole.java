@@ -155,7 +155,7 @@ argument_list|,
 name|roleName
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}

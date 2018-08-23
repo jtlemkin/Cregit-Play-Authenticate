@@ -421,7 +421,7 @@ argument_list|(
 name|identity
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}
@@ -755,7 +755,7 @@ argument_list|(
 name|email
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}
