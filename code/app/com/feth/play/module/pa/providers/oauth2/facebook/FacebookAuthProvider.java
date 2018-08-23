@@ -661,14 +661,12 @@ if|if
 condition|(
 name|c
 operator|.
-name|getString
+name|hasPath
 argument_list|(
 name|SettingKeys
 operator|.
 name|DISPLAY
 argument_list|)
-operator|!=
-literal|null
 condition|)
 block|{
 name|params
