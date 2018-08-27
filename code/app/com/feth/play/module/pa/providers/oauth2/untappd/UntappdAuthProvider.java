@@ -137,6 +137,18 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|typesafe
+operator|.
+name|config
+operator|.
+name|Config
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -165,7 +177,7 @@ begin_import
 import|import
 name|play
 operator|.
-name|Configuration
+name|Logger
 import|;
 end_import
 
@@ -173,7 +185,9 @@ begin_import
 import|import
 name|play
 operator|.
-name|Logger
+name|i18n
+operator|.
+name|MessagesApi
 import|;
 end_import
 
@@ -381,6 +395,10 @@ parameter_list|,
 specifier|final
 name|WSClient
 name|wsClient
+parameter_list|,
+specifier|final
+name|MessagesApi
+name|messagesApi
 parameter_list|)
 block|{
 name|super
@@ -390,6 +408,8 @@ argument_list|,
 name|lifecycle
 argument_list|,
 name|wsClient
+argument_list|,
+name|messagesApi
 argument_list|)
 expr_stmt|;
 block|}
@@ -578,7 +598,7 @@ throws|,
 name|ResolverMissingException
 block|{
 specifier|final
-name|Configuration
+name|Config
 name|c
 init|=
 name|getConfiguration
@@ -610,7 +630,7 @@ argument_list|(
 name|url
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|Constants
 operator|.
@@ -626,7 +646,7 @@ name|CLIENT_ID
 argument_list|)
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|Constants
 operator|.
@@ -642,7 +662,7 @@ name|CLIENT_SECRET
 argument_list|)
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|Constants
 operator|.
@@ -653,7 +673,7 @@ operator|.
 name|CODE
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|Constants
 operator|.
@@ -662,7 +682,7 @@ argument_list|,
 name|code
 argument_list|)
 operator|.
-name|setQueryParameter
+name|addQueryParameter
 argument_list|(
 name|getRedirectUriKey
 argument_list|()
@@ -735,7 +755,7 @@ name|Request
 name|request
 parameter_list|,
 specifier|final
-name|Configuration
+name|Config
 name|c
 parameter_list|)
 throws|throws

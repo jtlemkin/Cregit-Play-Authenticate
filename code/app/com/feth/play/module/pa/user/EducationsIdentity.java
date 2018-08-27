@@ -40,8 +40,6 @@ specifier|public
 interface|interface
 name|EducationsIdentity
 block|{
-specifier|public
-specifier|static
 class|class
 name|EducationInfo
 implements|implements

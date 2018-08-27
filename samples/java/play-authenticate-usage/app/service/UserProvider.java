@@ -7,6 +7,26 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|annotation
+operator|.
+name|*
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|inject
+operator|.
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|feth
@@ -49,18 +69,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|jetbrains
-operator|.
-name|annotations
-operator|.
-name|Nullable
-import|;
-end_import
-
-begin_import
-import|import
 name|play
 operator|.
 name|mvc
@@ -68,16 +76,6 @@ operator|.
 name|Http
 operator|.
 name|Session
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|inject
-operator|.
-name|Inject
 import|;
 end_import
 

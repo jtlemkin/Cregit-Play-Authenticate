@@ -7,6 +7,16 @@ end_package
 
 begin_import
 import|import
+name|io
+operator|.
+name|ebean
+operator|.
+name|Finder
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|persistence
@@ -110,10 +120,6 @@ argument_list|,
 name|LinkedAccount
 argument_list|>
 argument_list|(
-name|Long
-operator|.
-name|class
-argument_list|,
 name|LinkedAccount
 operator|.
 name|class
@@ -135,6 +141,9 @@ block|{
 return|return
 name|find
 operator|.
+name|query
+argument_list|()
+operator|.
 name|where
 argument_list|()
 operator|.
@@ -152,7 +161,7 @@ argument_list|,
 name|key
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}

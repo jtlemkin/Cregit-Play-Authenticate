@@ -119,9 +119,7 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|avaje
+name|io
 operator|.
 name|ebean
 operator|.
@@ -131,13 +129,21 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|avaje
+name|io
 operator|.
 name|ebean
 operator|.
 name|ExpressionList
+import|;
+end_import
+
+begin_import
+import|import
+name|io
+operator|.
+name|ebean
+operator|.
+name|Finder
 import|;
 end_import
 
@@ -302,10 +308,6 @@ argument_list|,
 name|User
 argument_list|>
 argument_list|(
-name|Long
-operator|.
-name|class
-argument_list|,
 name|User
 operator|.
 name|class
@@ -336,7 +338,7 @@ decl_stmt|;
 return|return
 name|exp
 operator|.
-name|findRowCount
+name|findCount
 argument_list|()
 operator|>
 literal|0
@@ -357,6 +359,9 @@ parameter_list|)
 block|{
 return|return
 name|find
+operator|.
+name|query
+argument_list|()
 operator|.
 name|where
 argument_list|()
@@ -416,7 +421,7 @@ argument_list|(
 name|identity
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}
@@ -750,7 +755,7 @@ argument_list|(
 name|email
 argument_list|)
 operator|.
-name|findUnique
+name|findOne
 argument_list|()
 return|;
 block|}
@@ -769,6 +774,9 @@ parameter_list|)
 block|{
 return|return
 name|find
+operator|.
+name|query
+argument_list|()
 operator|.
 name|where
 argument_list|()
